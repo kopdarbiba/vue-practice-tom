@@ -1,16 +1,39 @@
 <template>
   <div class="item">
-    <i>
-      <slot name="icon"></slot>
-    </i>
     <div class="details">
+      <h1>
+        <slot name="heading">Data is mocked: {{ isMockedData }}</slot>
+      </h1>
       <h3>
-        <slot name="heading"></slot>
+        <slot name="heading">id:{{ recipe.id }}</slot>
+        <br>
+        <slot name="heading">title: {{ recipe.title }}</slot>
+
       </h3>
       <slot></slot>
     </div>
   </div>
+  <div>
+    <img v-if="recipe.images && recipe.images.length > 0" :src="recipe.images[0].generate_presigned_url_for_thumbnail"
+      alt="Recipe Image" />
+    <img v-else :src="placeholderImage" alt="Placeholder Image" />
+    <hr>
+  </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      placeholderImage: 'https://via.placeholder.com/150' // Example placeholder image URL
+    };
+  },
+  props: {
+    recipe: Object,
+    isMockedData: Boolean,
+  }
+}
+</script>
 
 <style scoped>
 .item {
