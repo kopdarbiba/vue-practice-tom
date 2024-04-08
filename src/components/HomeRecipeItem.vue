@@ -1,16 +1,9 @@
 <template>
   <div class="item">
     <div class="details">
-      <h1>
-        <slot name="heading">Data is mocked: {{ isMockedData }}</slot>
-      </h1>
       <h3>
-        <slot name="heading">id:{{ recipe.id }}</slot>
-        <br>
-        <slot name="heading">title: {{ recipe.title }}</slot>
-
+        <slot name="heading">{{ recipe.title }}</slot>
       </h3>
-      <slot></slot>
     </div>
   </div>
   <div>
@@ -30,7 +23,6 @@ export default {
   },
   props: {
     recipe: Object,
-    isMockedData: Boolean,
   }
 }
 </script>
