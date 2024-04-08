@@ -1,9 +1,9 @@
 <script setup>
-import TheWelcome from '../components/HomeRecipeFeed.vue'
+import HomeRecipeFeed from '../components/HomeRecipeFeed.vue'
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <HomeRecipeFeed />
   </main>
 </template>
