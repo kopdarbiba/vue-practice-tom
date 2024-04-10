@@ -7,9 +7,9 @@ const language = useLanguageStore()
 
 <template>
     <div class="language-buttons">
-        <button> {{ language.en }}</button>
-        <button> {{ language.lv }}</button>
-        <button> {{ language.ru }}</button>
+        <button @click="language.selectedLang = 'en'">en</button>
+        <button @click="language.selectedLang = 'ru'">ru</button>
+        <button @click="language.selectedLang = 'lv'">lv</button>
     </div>
 </template>
 

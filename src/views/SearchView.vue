@@ -1,15 +1,9 @@
-<template>
-  <div class="search">
-    <h1>This is search page</h1>
-  </div>
-</template>
+<script setup>
+import SearchRecipeManager from '../components/SearchRecipeManager.vue'
+</script>
 
-<style>
-@media (min-width: 1024px) {
-  .search {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
+<template>
+  <main>
+    <SearchRecipeManager />
+  </main>
+</template>
