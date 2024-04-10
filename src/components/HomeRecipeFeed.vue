@@ -46,8 +46,8 @@ export default {
       ],
       apiRecipesData: [],
       endpoints: {
-        localhost: 'http://localhost:8000/api/recipes/?lang=lv',
-        aws: 'http://13.49.33.156/api/recipes/?lang=lv',
+        localhost: 'http://localhost:8000/api/recipes/',
+        aws: 'http://13.49.33.156/api/recipes/',
       }
     }
   },
