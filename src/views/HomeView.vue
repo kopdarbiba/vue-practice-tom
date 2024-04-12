@@ -1,5 +1,5 @@
 <script setup>
-import HomeRecipeManager from '../components/HomeRecipeManager.vue'
+import HomeRecipeManager from '../components/home/HomeRecipeManager.vue'
 </script>
 
 <template>

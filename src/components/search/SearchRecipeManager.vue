@@ -1,19 +1,14 @@
 <script setup>
-import { useLanguageStore } from '@/stores/language'
 import { useBackendDataStore } from '@/stores/backendData'
 import searchRecipeItem from './SearchRecipeItem.vue'
 import LoadingIndicator from '../helpers/LoadingIndicator.vue'
 import NotFound from '../helpers/NotFound.vue'
 
 
-const language = useLanguageStore()
 const backendDataStore = useBackendDataStore()
-backendDataStore.fetchRecipes();
-
 </script>
 
 <template>
-    tmp language value: {{ language.selectedLang }}
     <div class="search">
         <div v-if="backendDataStore.loading || backendDataStore.error">
             <div v-if="backendDataStore.loading">

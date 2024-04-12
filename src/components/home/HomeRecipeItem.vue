@@ -1,3 +1,11 @@
+<script setup>
+import { ref } from 'vue'
+defineProps(['recipe'])
+const placeholderImage = ref('https://via.placeholder.com/150')  // Example placeholder image URL
+
+</script>
+
+
 <template>
   <div class="item">
     <div class="details">
@@ -14,18 +22,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      placeholderImage: 'https://via.placeholder.com/150' // Example placeholder image URL
-    };
-  },
-  props: {
-    recipe: Object,
-  }
-}
-</script>
 
 <style scoped>
 .item {

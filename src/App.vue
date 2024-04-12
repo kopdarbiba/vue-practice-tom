@@ -1,7 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import PageHeader from './components/PageHeader.vue'
-import LangugaeButtons from './components/LanguageButtons.vue'
+import PageHeader from './components/header/PageHeader.vue'
+import LangugaeButtons from './components/internationalization/LanguageButtons.vue'
 </script>
 
 <template>

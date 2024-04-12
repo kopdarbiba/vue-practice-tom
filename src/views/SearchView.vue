@@ -1,5 +1,5 @@
 <script setup>
-import SearchRecipeManager from '../components/SearchRecipeManager.vue'
+import SearchRecipeManager from '../components/search/SearchRecipeManager.vue'
 </script>
 
 <template>
