@@ -1,15 +1,13 @@
 <script setup>
-import { ref } from 'vue'
 
-import AboutItem from './AboutItem.vue'
+import { useRouter } from 'vue-router'
 
-const msg = ref('Hello World!')
+const asd = useRouter()
 
 </script>
 <template>
-    <h1>{{ msg }}</h1>
-
-    <AboutItem v-model="msg" />
+    <h1>$route.query: {{ asd.listening }}</h1>
+    <!-- <h1>$router: {{ $router }}</h1> -->
 
     <div>
     </div>

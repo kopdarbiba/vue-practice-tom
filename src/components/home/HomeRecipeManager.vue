@@ -23,15 +23,12 @@ import NotFound from '../helpers/NotFound.vue';
 const loading = ref(true);
 const error = ref(false);
 const apiRecipesData = ref([]);
-const endpoints = {
-  localhost: 'http://localhost:8000/api/recipes/',
-  aws: 'http://13.49.33.156/api/recipes/',
-};
+const endpoints = 'http://localhost:8000/api/recipes/'
 
 const fetchRecipes = async () => {
   try {
     loading.value = true;
-    const response = await fetch(endpoints.localhost); // localhost || aws
+    const response = await fetch(endpoints)
     if (!response.ok) {
       throw new Error('Failed to fetch recipes');
     }

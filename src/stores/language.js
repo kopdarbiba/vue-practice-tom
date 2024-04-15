@@ -2,7 +2,7 @@ import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useLanguageStore = defineStore('language', () => {
-  const selectedLang = ref('')
+  const storedLanguage = ref('lv')
 
-  return { selectedLang }
+  return { storedLanguage: storedLanguage }
 })

@@ -1,17 +1,33 @@
-import { createMemoryHistory, createRouter } from 'vue-router'
+import { createWebHistory, createRouter } from 'vue-router'
 
-import HomeView from '../views/HomeView.vue'
-import SearchView from '../views/SearchView.vue'
-import AboutView from '../views/AboutView.vue'
+const HomeView = () => import(/* webpackChunkName: 'home'*/ '../views/HomeView.vue')
+const SearchView = () => import(/* webpackChunkName: 'search'*/ '../views/SearchView.vue')
+const AboutView = () => import(/* webpackChunkName: 'about'*/ '../views/AboutView.vue')
 
 const routes = [
-  { path: '/', component: HomeView },
-  { path: '/search', component: SearchView },
-  { path: '/about', component: AboutView }
+  {
+    path: '/',
+    component: HomeView,
+    name: 'home',
+    props: (route) => ({
+      lang: route.query.lang || 'router/index<@<lang: route.query.lang>@>'
+    })
+  },
+  {
+    path: '/search',
+    component: SearchView,
+    name: 'search',
+    props: (route) => ({
+      lang: route.query.lang,
+      ordering: route.query.ordering,
+      q: route.query.q || 'q prop placegolder'
+    })
+  },
+  { path: '/about', name: 'about', component: AboutView }
 ]
 
 const router = createRouter({
-  history: createMemoryHistory(),
+  history: createWebHistory(),
   routes
 })
 

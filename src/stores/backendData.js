@@ -4,7 +4,7 @@ import { useLanguageStore } from './language'
 
 export const useBackendDataStore = defineStore('BackendData', () => {
   const languageStore = useLanguageStore()
-  const newLangValue = computed(() => languageStore.selectedLang)
+  const langValueFromStore = computed(() => languageStore.storedLanguage)
 
   const apiRecipesData = ref([])
   const loading = ref(true)
@@ -12,7 +12,7 @@ export const useBackendDataStore = defineStore('BackendData', () => {
   const baseUrls = ref('http://localhost:8000/api/recipes/search/')
 
   const urlKwargs = ref({
-    lang: newLangValue,
+    lang: langValueFromStore,
     q: null,
     ingredients: 'chicken',
     ordering: null,
