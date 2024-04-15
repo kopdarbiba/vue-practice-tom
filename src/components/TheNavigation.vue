@@ -1,7 +1,6 @@
 <template>
     <nav>
-
-        <RouterLink :to="{ name: 'home' }">home</RouterLink>
+        <RouterLink :to="{ name: 'home' }">Home</RouterLink>
         <RouterLink :to="{ name: 'search' }">Search</RouterLink>
         <RouterLink :to="{ name: 'about' }">About</RouterLink>
     </nav>
