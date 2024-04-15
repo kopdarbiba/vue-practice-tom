@@ -8,10 +8,7 @@ const routes = [
   {
     path: '/',
     component: HomeView,
-    name: 'home',
-    props: (route) => ({
-      lang: route.query.lang || 'router/index<@<lang: route.query.lang>@>'
-    })
+    name: 'home'
   },
   {
     path: '/search',
