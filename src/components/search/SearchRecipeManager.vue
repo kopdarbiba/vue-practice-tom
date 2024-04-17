@@ -1,11 +1,20 @@
 <script setup>
+import { useRouter, useRoute } from 'vue-router'
+import { ref } from 'vue'
 
+const router = useRouter()
+const route = useRoute()
+const text = ref('')
 
+const submitSearch = () => {
+    router.push({ name: route.name, params: { lang: route.params.lang }, query: { q: text.value } })
+}
 </script>
 
 <template>
     <div class="search">
-        <h1>search manager comp</h1>
+        <input @keyup.enter="submitSearch" v-model="text" placeholder="Search recipe">
+
     </div>
 </template>
 

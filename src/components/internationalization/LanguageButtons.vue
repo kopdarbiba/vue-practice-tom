@@ -1,6 +1,12 @@
 <script setup>
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
+
 const router = useRouter()
+const route = useRoute()
+
+const submitLanguage = (language) => {
+    router.push({ name: route.name, params: { lang: language }, query: { q: route.query.q } })
+}
 
 </script>
 
@@ -26,18 +32,17 @@ const router = useRouter()
         </p>
         <hr>
         <p>
-            $route.href: {{ $route.href }}
+            $route.params.lang: {{ $route.params.lang }}
         </p>
         <hr>
         <p>
-            $route.params.lang: {{ $route.params.lang }}
+            $route.href: {{ $route.href }}
         </p>
     </div>
     <div class="language-buttons">
-        <button @click=" router.push({ name: $route.name, params: { lang: '' } })">lv</button>
-        <button @click=" router.push({ name: $route.name, params: { lang: 'en' } })">en</button>
-        <button @click=" router.push({ name: $route.name, params: { lang: 'ru' } })">ru</button>
-
+        <button @click="submitLanguage('lv')">lv</button>
+        <button @click="submitLanguage('ru')">ru</button>
+        <button @click="submitLanguage('en')">en</button>
     </div>
 
 </template>

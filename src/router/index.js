@@ -15,7 +15,11 @@ const routes = [
     component: SearchView,
     name: 'search'
   },
-  { path: '/:lang?/about', name: 'about', component: AboutView }
+  {
+    path: '/:lang?/about',
+    name: 'about',
+    component: AboutView
+  }
 ]
 
 const router = createRouter({
