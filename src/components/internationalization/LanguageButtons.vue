@@ -1,14 +1,7 @@
 <script setup>
-import { useLanguageStore } from '@/stores/language'
-import { useRoute } from 'vue-router'
-const language = useLanguageStore()
+import { useRouter } from 'vue-router'
+const router = useRouter()
 
-
-const route = useRoute()
-function getLanguageButtonValue(langValue) {
-    console.log(route.name)
-    language.storedLanguage = langValue
-}
 </script>
 
 <template>
@@ -33,14 +26,18 @@ function getLanguageButtonValue(langValue) {
         </p>
         <hr>
         <p>
-            $route.params: {{ $route.href }}
+            $route.href: {{ $route.href }}
         </p>
         <hr>
+        <p>
+            $route.params.lang: {{ $route.params.lang }}
+        </p>
     </div>
     <div class="language-buttons">
-        <button @click="getLanguageButtonValue('en')">en</button>
-        <button @click="getLanguageButtonValue('ru')">ru</button>
-        <button @click="getLanguageButtonValue('lv')">lv</button>
+        <button @click=" router.push({ name: $route.name, params: { lang: '' } })">lv</button>
+        <button @click=" router.push({ name: $route.name, params: { lang: 'en' } })">en</button>
+        <button @click=" router.push({ name: $route.name, params: { lang: 'ru' } })">ru</button>
+
     </div>
 
 </template>

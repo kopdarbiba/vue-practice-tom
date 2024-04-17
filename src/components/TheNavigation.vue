@@ -1,8 +1,8 @@
 <template>
     <nav>
-        <RouterLink :to="{ name: 'home' }">Home</RouterLink>
-        <RouterLink :to="{ name: 'search' }">Search</RouterLink>
-        <RouterLink :to="{ name: 'about' }">About</RouterLink>
+        <RouterLink :to="{ name: 'home', params: { lang: $route.params.lang } }">Home</RouterLink>
+        <RouterLink :to="{ name: 'search', params: { lang: $route.params.lang } }">Search</RouterLink>
+        <RouterLink :to="{ name: 'about', params: { lang: $route.params.lang } }">About</RouterLink>
     </nav>
 </template>
 

@@ -6,21 +6,16 @@ const AboutView = () => import(/* webpackChunkName: 'about'*/ '../views/AboutVie
 
 const routes = [
   {
-    path: '/',
+    path: '/:lang?',
     component: HomeView,
     name: 'home'
   },
   {
-    path: '/search',
+    path: '/:lang?/search',
     component: SearchView,
-    name: 'search',
-    props: (route) => ({
-      lang: route.query.lang,
-      ordering: route.query.ordering,
-      q: route.query.q || 'q prop placegolder'
-    })
+    name: 'search'
   },
-  { path: '/about', name: 'about', component: AboutView }
+  { path: '/:lang?/about', name: 'about', component: AboutView }
 ]
 
 const router = createRouter({
