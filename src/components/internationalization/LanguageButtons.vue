@@ -5,7 +5,13 @@ const router = useRouter()
 const route = useRoute()
 
 const submitLanguage = (language) => {
-    router.push({ name: route.name, params: { lang: language }, query: { q: route.query.q } })
+    const newQuery = { ...route.query };
+
+    router.push({
+        name: route.name,
+        params: { lang: language },
+        query: newQuery
+    })
 }
 
 </script>
@@ -40,7 +46,7 @@ const submitLanguage = (language) => {
         </p>
     </div>
     <div class="language-buttons">
-        <button @click="submitLanguage('lv')">lv</button>
+        <button @click="submitLanguage('')">lv</button>
         <button @click="submitLanguage('ru')">ru</button>
         <button @click="submitLanguage('en')">en</button>
     </div>
