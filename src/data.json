@@ -1,0 +1,835 @@
+{
+  "meal": {
+    "breakfast": {
+      "lv": "Brokastis",
+      "en": "Breakfast",
+      "ru": "Завтрак"
+    },
+    "brunch": {
+      "lv": "Brančs",
+      "en": "Brunch",
+      "ru": "Бранч"
+    },
+    "lunch": {
+      "lv": "Pusdienas",
+      "en": "Lunch",
+      "ru": "Обед"
+    },
+    "dinner": {
+      "lv": "Vakariņas",
+      "en": "Dinner",
+      "ru": "Ужин"
+    },
+    "supper": {
+      "lv": "Vieglas vēlās vakariņas",
+      "en": "Supper",
+      "ru": "Полдник"
+    },
+    "snack": {
+      "lv": "Uzkoda",
+      "en": "Snack",
+      "ru": "Легкая закуска"
+    },
+    "dessert": {
+      "lv": "Deserts",
+      "en": "Dessert",
+      "ru": "Десерт"
+    },
+    "appetizer": {
+      "lv": "Appetizer",
+      "en": "Appetizer",
+      "ru": "Аппетитная закуска"
+    },
+    "main_course": {
+      "lv": "Pamatēdiens",
+      "en": "Main Course",
+      "ru": "Основное блюдо"
+    },
+    "side_dish": {
+      "lv": "Piedeva",
+      "en": "Side Dish",
+      "ru": "Гарнир"
+    },
+    "soup": {
+      "lv": "Zupa",
+      "en": "Soup",
+      "ru": "Суп"
+    },
+    "salad": {
+      "lv": "Salāti",
+      "en": "Salad",
+      "ru": "Салат"
+    },
+    "sandwich": {
+      "lv": "Sviestmaize",
+      "en": "Sandwich",
+      "ru": "Бутерброд"
+    },
+    "smoothie": {
+      "lv": "Smūtijs",
+      "en": "Smoothie",
+      "ru": "Смузи"
+    },
+    "beverage": {
+      "lv": "Dzēriens",
+      "en": "Beverage",
+      "ru": "Напиток"
+    },
+    "cocktail": {
+      "lv": "Kokteilis",
+      "en": "Cocktail",
+      "ru": "Коктейль"
+    },
+    "pizza": {
+      "lv": "Pica",
+      "en": "Pizza",
+      "ru": "Пицца"
+    },
+    "pasta": {
+      "lv": "Makaroni",
+      "en": "Pasta",
+      "ru": "Паста"
+    }
+  },
+  "cuisine": {
+    "italian": {
+      "lv": "Itāļu",
+      "en": "Italian",
+      "ru": "Итальянская"
+    },
+    "mexican": {
+      "lv": "Meksikāņu",
+      "en": "Mexican",
+      "ru": "Мексиканская"
+    },
+    "chinese": {
+      "lv": "Ķīniešu",
+      "en": "Chinese",
+      "ru": "Китайская"
+    },
+    "indian": {
+      "lv": "Indiešu",
+      "en": "Indian",
+      "ru": "Индийская"
+    },
+    "japanese": {
+      "lv": "Japāņu",
+      "en": "Japanese",
+      "ru": "Японская"
+    },
+    "french": {
+      "lv": "Franču",
+      "en": "French",
+      "ru": "Французская"
+    },
+    "mediterranean": {
+      "lv": "Vidusjūras",
+      "en": "Mediterranean",
+      "ru": "Средиземноморская"
+    },
+    "thai": {
+      "lv": "Taizemiešu",
+      "en": "Thai",
+      "ru": "Тайская"
+    },
+    "greek": {
+      "lv": "Grieķu",
+      "en": "Greek",
+      "ru": "Греческая"
+    },
+    "spanish": {
+      "lv": "Spāņu",
+      "en": "Spanish",
+      "ru": "Испанская"
+    },
+    "american": {
+      "lv": "Amerikāņu",
+      "en": "American",
+      "ru": "Американская"
+    },
+    "middle_eastern": {
+      "lv": "Tuvo Austrumu",
+      "en": "Middle Eastern",
+      "ru": "Ближневосточная"
+    },
+    "korean": {
+      "lv": "Korejiešu",
+      "en": "Korean",
+      "ru": "Корейская"
+    },
+    "vietnamese": {
+      "lv": "Vjetnamiešu",
+      "en": "Vietnamese",
+      "ru": "Вьетнамская"
+    },
+    "brazilian": {
+      "lv": "Brazīļu",
+      "en": "Brazilian",
+      "ru": "Бразильская"
+    },
+    "caribbean": {
+      "lv": "Karībiešu",
+      "en": "Caribbean",
+      "ru": "Карибская"
+    },
+    "cajun_creole": {
+      "lv": "Kreolu",
+      "en": "Cajun/Creole",
+      "ru": "Каджунская/Креольская"
+    },
+    "moroccan": {
+      "lv": "Marokāņu",
+      "en": "Moroccan",
+      "ru": "Марокканская"
+    },
+    "ethiopian": {
+      "lv": "Etiopiešu",
+      "en": "Ethiopian",
+      "ru": "Эфиопская"
+    },
+    "russian": {
+      "lv": "Krievu",
+      "en": "Russian",
+      "ru": "Русская"
+    },
+    "latvian": {
+      "lv": "Latviešu",
+      "en": "Latvian",
+      "ru": "Латвийская"
+    },
+    "georgian": {
+      "lv": "Gruzīņu",
+      "en": "Georgian",
+      "ru": "Грузинская"
+    },
+    "armenian": {
+      "lv": "Armēņu",
+      "en": "Armenian",
+      "ru": "Армянская"
+    }
+  },
+  "occasion": {
+    "spring": {
+      "lv": "Pavasaris",
+      "en": "Spring",
+      "ru": "Весна"
+    },
+    "summer": {
+      "lv": "Vasara",
+      "en": "Summer",
+      "ru": "Лето"
+    },
+    "autumn": {
+      "lv": "Rudens",
+      "en": "Autumn",
+      "ru": "Осень"
+    },
+    "winter": {
+      "lv": "Ziema",
+      "en": "Winter",
+      "ru": "Зима"
+    },
+    "christmas": {
+      "lv": "Ziemassvētki",
+      "en": "Christmas",
+      "ru": "Рождество"
+    },
+    "thanksgiving": {
+      "lv": "Pateicības diena",
+      "en": "Thanksgiving",
+      "ru": "День Благодарения"
+    },
+    "easter": {
+      "lv": "Lieldienas",
+      "en": "Easter",
+      "ru": "Пасха"
+    },
+    "halloween": {
+      "lv": "Helovīns",
+      "en": "Halloween",
+      "ru": "Хэллоуин"
+    },
+    "diwali": {
+      "lv": "Divali",
+      "en": "Diwali",
+      "ru": "Дивали"
+    },
+    "ramadan": {
+      "lv": "Ramadāns",
+      "en": "Ramadan",
+      "ru": "Рамадан"
+    },
+    "hanukkah": {
+      "lv": "Hanuka",
+      "en": "Hanukkah",
+      "ru": "Ханука"
+    },
+    "chinese_new_year": {
+      "lv": "Ķīniešu Jaunais Gads",
+      "en": "Chinese New Year",
+      "ru": "Китайский Новый Год"
+    },
+    "birthday": {
+      "lv": "Dzimšanas diena",
+      "en": "Birthday",
+      "ru": "День Рождения"
+    },
+    "wedding": {
+      "lv": "Kāzas",
+      "en": "Wedding",
+      "ru": "Свадьба"
+    },
+    "anniversary": {
+      "lv": "Gadadiena",
+      "en": "Anniversary",
+      "ru": "Годовщина"
+    },
+    "engagement_party": {
+      "lv": "Saderināšanās ballīte",
+      "en": "Engagement Party",
+      "ru": "Помолвка"
+    },
+    "italian_night": {
+      "lv": "Itāļu vakars",
+      "en": "Italian Night",
+      "ru": "Итальянская ночь"
+    },
+    "mexican_night": {
+      "lv": "Meksikāņu vakars",
+      "en": "Mexican Night",
+      "ru": "Мексиканская ночь"
+    },
+    "indian_night": {
+      "lv": "Indijas vakars",
+      "en": "Indian Night",
+      "ru": "Индийская ночь"
+    },
+    "asian_night": {
+      "lv": "Āzijas vakars",
+      "en": "Asian Night",
+      "ru": "Азиатская ночь"
+    },
+    "mediterranean_night": {
+      "lv": "Vidusjūras vakars",
+      "en": "Mediterranean Night",
+      "ru": "Средиземноморская ночь"
+    },
+    "dinner_party": {
+      "lv": "Vakariņu ballīte",
+      "en": "Dinner Party",
+      "ru": "Ужин-вечеринка"
+    },
+    "cocktail_party": {
+      "lv": "Kokteiļu ballīte",
+      "en": "Cocktail Party",
+      "ru": "Коктейльная вечеринка"
+    },
+    "potluck": {
+      "lv": "Kopīgas maltītes ballīte",
+      "en": "Potluck",
+      "ru": "Потлак"
+    },
+    "bbq": {
+      "lv": "Grila ballīte",
+      "en": "BBQ",
+      "ru": "Барбекю"
+    },
+    "picnic": {
+      "lv": "Pikniks",
+      "en": "Picnic",
+      "ru": "Пикник"
+    },
+    "spring_fresh_ingredients": {
+      "lv": "Pavasara svaigie produkti",
+      "en": "Spring Fresh Ingredients",
+      "ru": "Весенние Свежие Ингредиенты"
+    },
+    "autumn_harvest": {
+      "lv": "Rudens raža",
+      "en": "Autumn Harvest",
+      "ru": "Осенний Урожай"
+    },
+    "new_england_seafood": {
+      "lv": "Jaunanglijas jūras veltes",
+      "en": "New England Seafood",
+      "ru": "Морепродукты Новой Англии"
+    },
+    "southwest_spicy": {
+      "lv": "Dienvideiropas asais",
+      "en": "Southwest Spicy",
+      "ru": "Юго-Западная Острая"
+    },
+    "mediterranean_flavors": {
+      "lv": "Vidusjūras garšas",
+      "en": "Mediterranean Flavors",
+      "ru": "Средиземноморские Вкусы"
+    }
+  },
+  "unit": {
+    "teaspoon_tsp": {
+      "lv": "Tējkarote (tējk.)",
+      "en": "Teaspoon (tsp)",
+      "ru": "Чайная ложка (ч. л.)"
+    },
+    "tablespoon_tbsp": {
+      "lv": "Ēdamkarote (ēd.k.)",
+      "en": "Tablespoon (tbsp)",
+      "ru": "Столовая ложка (ст. л.)"
+    },
+    "fluid_ounce_fl_oz": {
+      "lv": "Šķidrā unce (šķidr. oz)",
+      "en": "Fluid ounce (fl oz)",
+      "ru": "Жидкая унция (ж. унц.)"
+    },
+    "cup_c": {
+      "lv": "Glāze",
+      "en": "Cup (c)",
+      "ru": "Чашка (ч.)"
+    },
+    "pint_pt": {
+      "lv": "Pinte (pt)",
+      "en": "Pint (pt)",
+      "ru": "Пинта (пт.)"
+    },
+    "quart_qt": {
+      "lv": "Kvarts (qt)",
+      "en": "Quart (qt)",
+      "ru": "Кварта (квт.)"
+    },
+    "gallon_gal": {
+      "lv": "Gallons (gal)",
+      "en": "Gallon (gal)",
+      "ru": "Галлон (гал.)"
+    },
+    "milliliter_ml": {
+      "lv": "Mililitrs (ml)",
+      "en": "Milliliter (ml)",
+      "ru": "Миллилитр (мл)"
+    },
+    "liter_l": {
+      "lv": "Litrs (L)",
+      "en": "Liter (L)",
+      "ru": "Литр (л)"
+    },
+    "ounce_oz": {
+      "lv": "Unce (oz)",
+      "en": "Ounce (oz)",
+      "ru": "Унция (унц.)"
+    },
+    "pound_lb": {
+      "lv": "Mārciņa (lb)",
+      "en": "Pound (lb)",
+      "ru": "Фунт (фт.)"
+    },
+    "gram_g": {
+      "lv": "Grams (g)",
+      "en": "Gram (g)",
+      "ru": "Грамм (г)"
+    },
+    "kilogram_kg": {
+      "lv": "Kilograms (kg)",
+      "en": "Kilogram (kg)",
+      "ru": "Килограмм (кг)"
+    },
+    "inch_in": {
+      "lv": "Colla (in)",
+      "en": "Inch (in)",
+      "ru": "Дюйм (дюйм)"
+    },
+    "foot_ft": {
+      "lv": "Pēda (ft)",
+      "en": "Foot (ft)",
+      "ru": "Фут (фт)"
+    },
+    "centimeter_cm": {
+      "lv": "Centimetrs (cm)",
+      "en": "Centimeter (cm)",
+      "ru": "Сантиметр (см)"
+    },
+    "meter_m": {
+      "lv": "Metrs (m)",
+      "en": "Meter (m)",
+      "ru": "Метр (м)"
+    },
+    "fahrenheit_f": {
+      "lv": "Fārenheits (°F)",
+      "en": "Fahrenheit (°F)",
+      "ru": "Фаренгейт (°F)"
+    },
+    "celsius_c": {
+      "lv": "Celsija (°C)",
+      "en": "Celsius (°C)",
+      "ru": "Цельсий (°C)"
+    },
+    "each": {
+      "lv": "Katrs",
+      "en": "Each",
+      "ru": "Каждый"
+    },
+    "dozen": {
+      "lv": "Ducis",
+      "en": "Dozen",
+      "ru": "Дюжина"
+    }
+  },
+  "dietary_preference": {
+    "vegetarian": {
+      "lv": "Veģetārs",
+      "en": "Vegetarian",
+      "ru": "Вегетарианец"
+    },
+    "plant_based": {
+      "lv": "Augu izcelsme",
+      "en": "Plant-based",
+      "ru": "Растительное"
+    },
+    "vegan": {
+      "lv": "Vegāns",
+      "en": "Vegan",
+      "ru": "Веган"
+    },
+    "paleo": {
+      "lv": "Paleo",
+      "en": "Paleo",
+      "ru": "Палео"
+    },
+    "gluten_free": {
+      "lv": "Bezglutēna",
+      "en": "Gluten-Free",
+      "ru": "Без глютена"
+    },
+    "keto": {
+      "lv": "Keto",
+      "en": "Keto",
+      "ru": "Кето"
+    },
+    "low_carb": {
+      "lv": "Zems ogļhidrātu saturs",
+      "en": "Low-Carb",
+      "ru": "Низкоуглеводный"
+    },
+    "dairy_free": {
+      "lv": "Bez piena",
+      "en": "Dairy-Free",
+      "ru": "Без молочных продуктов"
+    },
+    "nut_free": {
+      "lv": "Bez riekstiem",
+      "en": "Nut-Free",
+      "ru": "Без орехов"
+    },
+    "low_fat": {
+      "lv": "Zems tauku saturs",
+      "en": "Low-Fat",
+      "ru": "Низкожировой"
+    },
+    "high_protein": {
+      "lv": "Proteīnu piesātināts",
+      "en": "High-Protein",
+      "ru": "Богатый белком"
+    },
+    "mediterranean": {
+      "lv": "Vidusjūras",
+      "en": "Mediterranean",
+      "ru": "Средиземноморский"
+    },
+    "pescatarian": {
+      "lv": "Pesketārs",
+      "en": "Pescatarian",
+      "ru": "Пескетарианец"
+    },
+    "flexitarian": {
+      "lv": "Fleksitārs",
+      "en": "Flexitarian",
+      "ru": "Флекситарианец"
+    },
+    "whole30": {
+      "lv": "Whole30",
+      "en": "Whole30",
+      "ru": "Веган Whole30"
+    },
+    "ovo_lacto_vegetarian": {
+      "lv": "Ovo-lakto-veģetārs",
+      "en": "Ovo-lacto-vegetarian",
+      "ru": "Ово-лакто-вегетарианец"
+    },
+    "ovo_vegetarian": {
+      "lv": "Ovo-veģetārs",
+      "en": "Ovo-vegetarian",
+      "ru": "Ово-вегетарианец"
+    },
+    "lacto_vegetarian": {
+      "lv": "Lakto-veģetārs",
+      "en": "Lacto-vegetarian",
+      "ru": "Лакто-вегетарианец"
+    },
+    "omnivorous": {
+      "lv": "Visēdājs",
+      "en": "Omnivorous",
+      "ru": "Omnivorous"
+    }
+  },
+  "equipment": {
+    "stove": {
+      "lv": "Plīts virsma",
+      "en": "Stove",
+      "ru": "Плита"
+    },
+    "oven": {
+      "lv": "Cepeškrāsns",
+      "en": "Oven",
+      "ru": "Духовка"
+    },
+    "grill": {
+      "lv": "Grils",
+      "en": "Grill",
+      "ru": "Гриль"
+    },
+    "microwave": {
+      "lv": "Mikroviļņu krāsns",
+      "en": "Microwave",
+      "ru": "Микроволновая печь"
+    },
+    "blender": {
+      "lv": "Blenderis",
+      "en": "Blender",
+      "ru": "Блендер"
+    },
+    "grinder_chopper": {
+      "lv": "Dzirnaviņas/Smalcinātājs",
+      "en": "Grinder/Chopper",
+      "ru": "Измельчитель / Шинковщик"
+    },
+    "baking_sheets": {
+      "lv": "Cepampapīrs",
+      "en": "Baking sheets",
+      "ru": "Противень для выпечки"
+    },
+    "grater": {
+      "lv": "Rīve",
+      "en": "Grater",
+      "ru": "Терка"
+    },
+    "whisk": {
+      "lv": "Putotājs",
+      "en": "Whisk",
+      "ru": "Венчик"
+    },
+    "waffle_pan": {
+      "lv": "Vafeļpanna",
+      "en": "Waffle pan",
+      "ru": "Вафельница"
+    },
+    "mixing_glass": {
+      "lv": "Miksglāze",
+      "en": "Mixing glass",
+      "ru": "Стакан для смешивания"
+    },
+    "thermometer": {
+      "lv": "Termometrs",
+      "en": "Thermometer",
+      "ru": "Термометр"
+    },
+    "kitchen_scale": {
+      "lv": "Virtuves svari",
+      "en": "Kitchen scale",
+      "ru": "Кухонные весы"
+    },
+    "timer": {
+      "lv": "Taimeris",
+      "en": "Timer",
+      "ru": "Таймер"
+    }
+  },
+  "allergen": {
+    "milk": {
+      "lv": "Piens",
+      "en": "Milk",
+      "ru": "Молоко"
+    },
+    "eggs": {
+      "lv": "Olas",
+      "en": "Eggs",
+      "ru": "Яйца"
+    },
+    "peanuts": {
+      "lv": "Zemesrieksti",
+      "en": "Peanuts",
+      "ru": "Арахис"
+    },
+    "tree_nuts": {
+      "lv": "Rieksti",
+      "en": "Tree nuts",
+      "ru": "Орехи"
+    },
+    "soy": {
+      "lv": "Soja",
+      "en": "Soy",
+      "ru": "Соя"
+    },
+    "wheat": {
+      "lv": "Kvieši",
+      "en": "Wheat",
+      "ru": "Пшеница"
+    },
+    "fish": {
+      "lv": "Zivis",
+      "en": "Fish",
+      "ru": "Рыба"
+    },
+    "shellfish": {
+      "lv": "Vēžveidīgie",
+      "en": "Shellfish",
+      "ru": "Морепродукты"
+    },
+    "sesame_seeds": {
+      "lv": "Sezama sēklas",
+      "en": "Sesame seeds",
+      "ru": "Семена кунжута"
+    },
+    "mustard": {
+      "lv": "Sinepes",
+      "en": "Mustard",
+      "ru": "Горчица"
+    },
+    "celery": {
+      "lv": "Selerija",
+      "en": "Celery",
+      "ru": "Сельдерей"
+    }
+  },
+  "cooking_method": {
+    "gather": {
+      "lv": "Savākt",
+      "en": "Gather",
+      "ru": "Собирать"
+    },
+    "preheat": {
+      "lv": "Uzsildīt",
+      "en": "Preheat",
+      "ru": "Разогревать"
+    },
+    "prepare": {
+      "lv": "Sagatavot",
+      "en": "Prepare",
+      "ru": "Приготовить"
+    },
+    "wash": {
+      "lv": "Nomazgāt",
+      "en": "Wash",
+      "ru": "Вымыть"
+    },
+    "peel": {
+      "lv": "Nolobīt",
+      "en": "Peel",
+      "ru": "Очистить"
+    },
+    "chop": {
+      "lv": "Sasmalcināt",
+      "en": "Chop",
+      "ru": "Мелко порубить"
+    },
+    "add": {
+      "lv": "Pievienot",
+      "en": "Add",
+      "ru": "Добавить"
+    },
+    "combine": {
+      "lv": "Apvienot",
+      "en": "Combine",
+      "ru": "Соединить"
+    },
+    "mix": {
+      "lv": "Sajaukt",
+      "en": "Mix",
+      "ru": "Мешать"
+    },
+    "cook": {
+      "lv": "Gatavot",
+      "en": "Cook",
+      "ru": "Готовить"
+    },
+    "stir": {
+      "lv": "Maisīt",
+      "en": "Stir",
+      "ru": "Перемешивать"
+    },
+    "fry": {
+      "lv": "Cept",
+      "en": "Fry",
+      "ru": "Жарить"
+    },
+    "taste": {
+      "lv": "Garšot",
+      "en": "Taste",
+      "ru": "Пробовать на вкус"
+    },
+    "rest": {
+      "lv": "Atlaidināt",
+      "en": "Rest",
+      "ru": "Отдохнуть"
+    },
+    "garnish": {
+      "lv": "Rotāt",
+      "en": "Garnish",
+      "ru": "Украсить"
+    },
+    "serve": {
+      "lv": "Pasniegt",
+      "en": "Serve",
+      "ru": "Подавать"
+    },
+    "store": {
+      "lv": "Uzglabāt",
+      "en": "Store",
+      "ru": "Хранить"
+    },
+    "boil": {
+      "lv": "Vārīt",
+      "en": "Boil",
+      "ru": "Boil"
+    }
+  },
+  "ingredient_category": {
+    "vegetables": {
+      "lv": "Dārzeņi",
+      "en": "Vegetables",
+      "ru": "Овощи"
+    },
+    "fruits": {
+      "lv": "Augļi",
+      "en": "Fruits",
+      "ru": "Фрукты"
+    },
+    "proteins": {
+      "lv": "Olbaltumvielas",
+      "en": "Proteins",
+      "ru": "Белки"
+    },
+    "grains": {
+      "lv": "Graudi",
+      "en": "Grains",
+      "ru": "Злаки"
+    },
+    "dairy_and_alternatives": {
+      "lv": "Piena produkti un alternatīvas",
+      "en": "Dairy and Alternatives",
+      "ru": "Молочные продукты и альтернативы"
+    },
+    "herbs_and_spices": {
+      "lv": "Garšaugi un piedevas",
+      "en": "Herbs and Spices",
+      "ru": "Травы и специи"
+    },
+    "condiments": {
+      "lv": "Garšvielas",
+      "en": "Condiments",
+      "ru": "Приправы"
+    },
+    "nuts_and_seeds": {
+      "lv": "Rieksti un sēklas",
+      "en": "Nuts and Seeds",
+      "ru": "Орехи и семечки"
+    }
+  }
+}
