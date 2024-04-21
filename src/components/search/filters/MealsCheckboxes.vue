@@ -7,10 +7,14 @@ import LanguageManager from './LanguageManager.vue'
 const router = useRouter()
 const route = useRoute()
 
-const checkedMeals = ref({ "meal": [] })
+const checkedMeals = ref()
+if (!route.query.meal) {
+    checkedMeals.value = { "meal": [] }
+} else {
+    checkedMeals.value = { "meal": route.query.meal }
+}
 
 const submitMealSelector = () => {
-    console.log(checkedMeals.value)
     router.push({
         name: route.name,
         params: { lang: route.params.lang },

@@ -17,34 +17,6 @@ const submitLanguage = (language) => {
 </script>
 
 <template>
-    <p>
-        $route:{{ $route }}
-    </p>
-    <div>
-        <p>
-            $route.fullPath: {{ $route.fullPath }}
-        </p>
-        <hr>
-        <p>
-            $route.name :{{ $route.name }}
-        </p>
-        <hr>
-        <p>
-            $route.query: {{ $route.query }}
-        </p>
-        <hr>
-        <p>
-            $route.params: {{ $route.params }}
-        </p>
-        <hr>
-        <p>
-            $route.params.lang: {{ $route.params.lang }}
-        </p>
-        <hr>
-        <p>
-            $route.href: {{ $route.href }}
-        </p>
-    </div>
     <div class="language-buttons">
         <button @click="submitLanguage('')">lv</button>
         <button @click="submitLanguage('ru')">ru</button>

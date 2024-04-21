@@ -1,0 +1,17 @@
+{
+  "home": {
+    "": "Sākums",
+    "en": "Home",
+    "ru": "Домой"
+  },
+  "search": {
+    "": "Meklēt",
+    "en": "Search",
+    "ru": "Поиск"
+  },
+  "about": {
+    "": "Par mums",
+    "en": "About",
+    "ru": "О нас"
+  }
+}
