@@ -18,6 +18,11 @@
       "ru": "Сортировать по"
     },
     "options": {
+      "favorite": {
+        "": "Populārākās",
+        "en": "Favorite",
+        "ru": "фаворит "
+      },
       "price_ascend": {
         "": "Lētākie",
         "en": "Lowest Price",
@@ -50,7 +55,6 @@
       }
     }
   },
-
   "priceFilter": {
     "minField": {
       "": "No",
