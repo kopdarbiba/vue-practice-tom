@@ -1,13 +1,18 @@
 <script setup>
 import { useRouter, useRoute } from 'vue-router'
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import sourceData from '../../../data.json';
-import LanguageManager from './LanguageManager.vue'
+import CheckBoxItem from './CheckBoxItem.vue'
+import MoreLessToggler from './MoreLessToggler.vue'
+
 
 const router = useRouter()
 const route = useRoute()
 
+const dataArray = sourceData.meal
+const showLess = ref(true)
 const checkedMeals = ref()
+
 if (!route.query.meal) {
     checkedMeals.value = { "meal": [] }
 } else {
@@ -25,20 +30,21 @@ const submitMealSelector = () => {
     });
 }
 
+const filteredMeals = computed(() => {
+    return showLess.value
+        ? dataArray.filter((t) => t.trending)
+        : dataArray
+})
+
+const doToggle = () => {
+    showLess.value = !showLess.value
+}
 </script>
 
 <template>
     <div class="meal-selector">
-        <li v-for="(value, key) in sourceData.meal" :key="key">
-            <input @change="submitMealSelector" type="checkbox" :value="key" v-model="checkedMeals.meal">
-            <LanguageManager :lv="value.lv" :ru="value.ru" :en="value.en" />
-        </li>
+        <CheckBoxItem v-for="(value, key) in filteredMeals" :key="key" :value="value" v-model="checkedMeals.meal"
+            @submitMealSelector="submitMealSelector" />
+        <MoreLessToggler @doToggle="doToggle" />
     </div>
 </template>
-
-
-<style local>
-li {
-    list-style-type: none;
-}
-</style>

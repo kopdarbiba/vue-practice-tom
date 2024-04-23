@@ -71,5 +71,17 @@
       "en": "Go",
       "ru": "Перейти"
     }
+  },
+  "checkBox": {
+    "seeMore": {
+      "": "vairāk",
+      "en": "see more",
+      "ru": "показать больше"
+    },
+    "seeLess": {
+      "": "mazāk",
+      "en": "see less",
+      "ru": "показать меньше"
+    }
   }
 }

@@ -1,0 +1,85 @@
+{
+  "searchQuery": {
+    "button": {
+      "": "Meklēt",
+      "en": "Search",
+      "ru": "Поиск"
+    },
+    "search_box": {
+      "": "Meklēt recepti",
+      "en": "Search Recipe",
+      "ru": "Поиск рецепта"
+    }
+  },
+  "orderSelector": {
+    "placeholder": {
+      "": "Kārtot pēc",
+      "en": "Sort by",
+      "ru": "Сортировать по"
+    },
+    "favorite": {
+      "": "Populārākās",
+      "en": "Favorite",
+      "ru": "фаворит "
+    },
+    "price_ascend": {
+      "": "Lētākie",
+      "en": "Lowest Price",
+      "ru": "Самое дешевое"
+    },
+    "price_desc": {
+      "": "Dārgākie",
+      "en": "Highest Price",
+      "ru": "Самое дорогое"
+    },
+    "cooking_time_ascend": {
+      "": "Gatavošanas laiks (aug)",
+      "en": "Shortest Time",
+      "ru": "Мин. время"
+    },
+    "cooking_time_desc": {
+      "": "Gatavošanas laiks (dil)",
+      "en": "Longest Time",
+      "ru": "Макс. время"
+    },
+    "servings_ascend": {
+      "": "Mazāk porcijas",
+      "en": "Fewest Servings",
+      "ru": "Меньше порций"
+    },
+    "servings_desc": {
+      "": "Vairāk porcijas",
+      "en": "Most Servings",
+      "ru": "Больше порций"
+    }
+  },
+  "priceFilter": {
+    "minField": {
+      "": "No",
+      "en": "From",
+      "ru": "От"
+    },
+    "maxField": {
+      "": "Līdz",
+      "en": "To",
+      "ru": "До"
+    },
+    "button": {
+      "": "Filtrēt",
+      "en": "Go",
+      "ru": "Перейти"
+    }
+  },
+  "checkBox": {
+    "seeMore": {
+      "": "vairāk",
+      "en": "see more",
+      "ru": "показать больше"
+    },
+    "seeLess": {
+      "": "mazāk",
+      "en": "see less",
+      "ru": "показать меньше"
+    }
+  }
+}

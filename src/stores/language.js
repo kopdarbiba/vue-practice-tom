@@ -1,8 +1,15 @@
-import { ref } from 'vue'
 import { defineStore } from 'pinia'
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+import translate from './translate.json'
 
 export const useLanguageStore = defineStore('language', () => {
-  const storedLanguage = ref('lv')
+  const route = useRoute()
 
-  return { storedLanguage: storedLanguage }
+  const lessTogglerTranslated = computed(() => translate.checkBox.seeLess[route.params.lang])
+  const moreTogglerTranslated = computed(() => translate.checkBox.seeMore[route.params.lang])
+  return {
+    lessTogglerTranslated,
+    moreTogglerTranslated
+  }
 })

@@ -1,96 +1,132 @@
 {
-  "meal": {
-    "breakfast": {
+  "meal": [
+    {
       "lv": "Brokastis",
       "en": "Breakfast",
-      "ru": "Завтрак"
+      "ru": "Завтрак",
+      "slug": "breakfast",
+      "trending": true
     },
-    "brunch": {
+    {
       "lv": "Brančs",
       "en": "Brunch",
-      "ru": "Бранч"
+      "ru": "Бранч",
+      "slug": "brunch",
+      "trending": true
     },
-    "lunch": {
+    {
       "lv": "Pusdienas",
       "en": "Lunch",
-      "ru": "Обед"
+      "ru": "Обед",
+      "slug": "lunch",
+      "trending": true
     },
-    "dinner": {
+    {
       "lv": "Vakariņas",
       "en": "Dinner",
-      "ru": "Ужин"
+      "ru": "Ужин",
+      "slug": "dinner",
+      "trending": true
     },
-    "supper": {
+    {
       "lv": "Vieglas vēlās vakariņas",
       "en": "Supper",
-      "ru": "Полдник"
+      "ru": "Полдник",
+      "slug": "supper",
+      "trending": true
     },
-    "snack": {
+    {
       "lv": "Uzkoda",
       "en": "Snack",
-      "ru": "Легкая закуска"
+      "ru": "Легкая закуска",
+      "slug": "snack",
+      "trending": false
     },
-    "dessert": {
+    {
       "lv": "Deserts",
       "en": "Dessert",
-      "ru": "Десерт"
+      "ru": "Десерт",
+      "slug": "dessert",
+      "trending": false
     },
-    "appetizer": {
+    {
       "lv": "Appetizer",
       "en": "Appetizer",
-      "ru": "Аппетитная закуска"
+      "ru": "Аппетитная закуска",
+      "slug": "appetizer",
+      "trending": false
     },
-    "main_course": {
+    {
       "lv": "Pamatēdiens",
       "en": "Main Course",
-      "ru": "Основное блюдо"
+      "ru": "Основное блюдо",
+      "slug": "main_course",
+      "trending": false
     },
-    "side_dish": {
+    {
       "lv": "Piedeva",
       "en": "Side Dish",
-      "ru": "Гарнир"
+      "ru": "Гарнир",
+      "slug": "side_dish",
+      "trending": false
     },
-    "soup": {
+    {
       "lv": "Zupa",
       "en": "Soup",
-      "ru": "Суп"
+      "ru": "Суп",
+      "slug": "soup",
+      "trending": false
     },
-    "salad": {
+    {
       "lv": "Salāti",
       "en": "Salad",
-      "ru": "Салат"
+      "ru": "Салат",
+      "slug": "salad",
+      "trending": false
     },
-    "sandwich": {
+    {
       "lv": "Sviestmaize",
       "en": "Sandwich",
-      "ru": "Бутерброд"
+      "ru": "Бутерброд",
+      "slug": "sandwich",
+      "trending": false
     },
-    "smoothie": {
+    {
       "lv": "Smūtijs",
       "en": "Smoothie",
-      "ru": "Смузи"
+      "ru": "Смузи",
+      "slug": "smoothie",
+      "trending": false
     },
-    "beverage": {
+    {
       "lv": "Dzēriens",
       "en": "Beverage",
-      "ru": "Напиток"
+      "ru": "Напиток",
+      "slug": "beverage",
+      "trending": false
     },
-    "cocktail": {
+    {
       "lv": "Kokteilis",
       "en": "Cocktail",
-      "ru": "Коктейль"
+      "ru": "Коктейль",
+      "slug": "cocktail",
+      "trending": false
     },
-    "pizza": {
+    {
       "lv": "Pica",
       "en": "Pizza",
-      "ru": "Пицца"
+      "ru": "Пицца",
+      "slug": "pizza",
+      "trending": false
     },
-    "pasta": {
+    {
       "lv": "Makaroni",
       "en": "Pasta",
-      "ru": "Паста"
+      "ru": "Паста",
+      "slug": "pasta",
+      "trending": false
     }
-  },
+  ],
   "cuisine": {
     "italian": {
       "lv": "Itāļu",
