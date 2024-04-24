@@ -2,7 +2,8 @@
 import OrderSelector from './filters/OrderSelector.vue'
 import SearchQueryBox from './filters/SearchQueryBox.vue'
 import MinMaxPrice from './filters/MinMaxPrice.vue'
-import MealsCheckboxes from './filters/MealsCheckboxes.vue'
+import checkBoxeManager from './filters/checkBoxeManager.vue'
+
 
 </script>
 
@@ -14,5 +15,5 @@ import MealsCheckboxes from './filters/MealsCheckboxes.vue'
     <br>
     <MinMaxPrice />
     <br>
-    <MealsCheckboxes />
+    <checkBoxeManager />
 </template>
