@@ -5,5 +5,5 @@ import sourceData from '../../../data.json';
 </script>
 
 <template>
-    <CheckBoxItem v-for="(data, key) in sourceData" :data="data" :key="key" :itemKey="key" />
+    <CheckBoxItem v-for="(block, key) in sourceData" :block="block" :key="key" :itemKey="key" />
 </template>

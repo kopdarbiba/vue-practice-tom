@@ -2,7 +2,7 @@
 import { ref, defineProps, computed } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import MoreLessToggler from './MoreLessToggler.vue'
-const { data, itemKey } = defineProps(['data', 'itemKey'])
+const { block, itemKey } = defineProps(['block', 'itemKey'])
 const router = useRouter()
 const route = useRoute()
 
@@ -20,8 +20,8 @@ const newQuery = computed(() => {
 
 const filteredMeals = computed(() => {
     return showLess.value
-        ? data.filter((t) => t.favorite)
-        : data
+        ? block.data.filter((t) => t.favorite)
+        : block.data
 })
 
 const doToggle = () => {
@@ -47,7 +47,7 @@ const selectedLang = computed(() => {
 
 
 <template>
-    <h2>{{ itemKey }}</h2>
+    <h1>{{ block.title[selectedLang] }}</h1>
     <li v-for="(value, key) in filteredMeals" :key="key" :value="value">
         <input @change="submitSelected" type="checkbox" :value=value.slug v-model="itemArray">
         <label>{{ value[selectedLang] }}</label>
