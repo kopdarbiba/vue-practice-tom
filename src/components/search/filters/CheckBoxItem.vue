@@ -1,12 +1,16 @@
 <script setup>
-import { ref, defineProps, computed } from 'vue'
+import { ref, computed } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
-import MoreLessToggler from './MoreLessToggler.vue'
-const { block, itemKey } = defineProps(['block', 'itemKey'])
+import { useLanguageStore } from '@/stores/language'
+import { storeToRefs } from 'pinia'
+
 const router = useRouter()
 const route = useRoute()
+const store = useLanguageStore()
 
-const showLess = ref(true)
+const { block, itemKey } = defineProps(['block', 'itemKey'])
+const { lessTogglerTranslated, moreTogglerTranslated } = storeToRefs(store)
+
 const itemArray = ref([])
 
 if (route.query[itemKey]) {
@@ -17,16 +21,6 @@ const newQuery = computed(() => {
     return { [itemKey]: itemArray.value }
 }
 )
-
-const filteredMeals = computed(() => {
-    return showLess.value
-        ? block.data.filter((t) => t.favorite)
-        : block.data
-})
-
-const doToggle = () => {
-    showLess.value = !showLess.value
-}
 
 const submitSelected = () => {
     router.push({
@@ -43,6 +37,19 @@ const selectedLang = computed(() => {
     return route.params.lang ? route.params.lang : 'lv'
 })
 
+const showLess = ref(true)
+const doToggle = () => {
+    showLess.value = !showLess.value
+}
+
+const filteredMeals = computed(() => {
+    return showLess.value
+        ? block.data.filter((t) => t.favorite)
+        : block.data
+})
+
+const buttonText = computed(() => showLess.value ? moreTogglerTranslated : lessTogglerTranslated)
+
 </script>
 
 
@@ -52,6 +59,17 @@ const selectedLang = computed(() => {
         <input @change="submitSelected" type="checkbox" :value=value.slug v-model="itemArray">
         <label>{{ value[selectedLang] }}</label>
     </li>
-    <MoreLessToggler @doToggle="doToggle" />
+    <span @click="doToggle" class="clickable">{{ buttonText }}</span>
+
 
 </template>
+
+<style scoped>
+.clickable {
+    cursor: pointer;
+}
+
+.clickable:hover {
+    color: blue;
+}
+</style>
