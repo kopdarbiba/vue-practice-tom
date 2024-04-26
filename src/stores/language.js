@@ -8,8 +8,12 @@ export const useLanguageStore = defineStore('language', () => {
 
   const lessTogglerTranslated = computed(() => translate.checkBox.seeLess[route.params.lang])
   const moreTogglerTranslated = computed(() => translate.checkBox.seeMore[route.params.lang])
+  const searchBoxTranslated = computed(() => translate.searchQuery.search_box[route.params.lang])
+  const searchButtonTranslated = computed(() => translate.searchQuery.button[route.params.lang])
   return {
     lessTogglerTranslated,
-    moreTogglerTranslated
+    moreTogglerTranslated,
+    searchBoxTranslated,
+    searchButtonTranslated
   }
 })

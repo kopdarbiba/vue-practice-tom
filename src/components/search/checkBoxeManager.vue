@@ -1,6 +1,6 @@
 <script setup>
-import CheckBoxItem from './CheckBoxItem.vue'
-import sourceData from '../../../data.json';
+import CheckBoxItem from './filters/CheckBoxItem.vue'
+import sourceData from './../../data.json';
 
 </script>
 

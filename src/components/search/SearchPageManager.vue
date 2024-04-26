@@ -2,7 +2,7 @@
 import OrderSelector from './filters/OrderSelector.vue'
 import SearchQueryBox from './filters/SearchQueryBox.vue'
 import MinMaxPrice from './filters/MinMaxPrice.vue'
-import checkBoxeManager from './filters/checkBoxeManager.vue'
+import checkBoxeManager from './checkBoxeManager.vue'
 
 
 </script>

@@ -1,37 +1,39 @@
 <script setup>
 import { useRouter, useRoute } from 'vue-router'
-import { ref } from 'vue'
-import translate from './translate.json'
+import { ref, computed } from 'vue'
+import { storeToRefs } from 'pinia'
+import { useLanguageStore } from '@/stores/language'
+
+const store = useLanguageStore()
+const { searchBoxTranslated, searchButtonTranslated } = storeToRefs(store)
 
 const router = useRouter()
 const route = useRoute()
 
-const searchQuery = ref({ q: route.query.q })
+const searchBoxInput = ref()
+
+const computeNewQuery = computed(() => {
+    if (searchBoxInput.value) {
+        return { ...route.query, "q": searchBoxInput.value }
+    } else {
+        const routeQuery = { ...route.query }
+        delete routeQuery.q
+        return routeQuery
+    }
+})
 
 const submitSearch = () => {
-    const query = searchQuery.value.q.trim()
-    if (query) {
-        router.push({
-            name: route.name,
-            params: { lang: route.params.lang },
-            query: { ...route.query, q: query }
-        })
-    } else {
-        const newQuery = { ...route.query }
-        delete newQuery.q
-        router.push({
-            name: route.name,
-            params: { lang: route.params.lang },
-            query: newQuery
-        })
-    }
+    router.push({
+        name: route.name,
+        params: { lang: route.params.lang },
+        query: computeNewQuery.value
+    })
 }
 </script>
 
 <template>
     <div class="search-recipes">
-        <input @keyup.enter="submitSearch" v-model="searchQuery.q"
-            :placeholder="translate.searchQuery.search_box[route.params.lang]">
-        <button @click="submitSearch">{{ translate.searchQuery.button[route.params.lang] }}</button>
+        <input @keyup.enter="submitSearch" v-model="searchBoxInput" :placeholder="searchBoxTranslated">
+        <button @click="submitSearch">{{ searchButtonTranslated }}</button>
     </div>
 </template>
