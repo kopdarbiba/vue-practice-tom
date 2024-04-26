@@ -1,43 +1,49 @@
 <script setup>
 import { useRouter, useRoute } from 'vue-router'
-import { ref } from 'vue'
-import translate from './translate.json';
+import { ref, computed } from 'vue'
+import { useLanguageStore } from '@/stores/language'
+import { storeToRefs } from 'pinia'
 
 const router = useRouter()
 const route = useRoute()
+const store = useLanguageStore()
+const { priceMinTranslated, priceMaxTranslated, priceButtonTranslated } = storeToRefs(store)
 
-const priceMin = ref(route.query.minPrice || '')
-const priceMax = ref(route.query.maxPrice || '')
+const priceMin = ref(route.query.minPrice)
+const priceMax = ref(route.query.maxPrice)
+
+const computedQuery = computed(() => {
+    const rQ = { ...route.query };
+
+    if (!isNaN(priceMin.value) && priceMin.value) {
+        rQ.minPrice = priceMin.value;
+    } else {
+        delete rQ.minPrice;
+    }
+
+    if (!isNaN(priceMax.value) && priceMax.value) {
+        rQ.maxPrice = priceMax.value;
+    } else {
+        delete rQ.maxPrice;
+    }
+    return rQ
+})
 
 const submitPriceRange = () => {
-    const newQuery = { ...route.query };
-
-    if (!isNaN(priceMin.value) && priceMin.value !== '') {
-        newQuery.minPrice = priceMin.value;
-    } else {
-        delete newQuery.minPrice;
-    }
-
-    if (!isNaN(priceMax.value) && priceMax.value !== '') {
-        newQuery.maxPrice = priceMax.value;
-    } else {
-        delete newQuery.maxPrice;
-    }
-
     router.push({
         name: route.name,
         params: { lang: route.params.lang },
-        query: newQuery,
+        query: computedQuery.value
     });
 };
 </script>
 
 <template>
     <div class="filter-recipes-by-price">
-        <input @keyup.enter="submitPriceRange" type="number" v-model="priceMin"
-            :placeholder="translate.priceFilter.minField[route.params.lang]" />
-        <input @keyup.enter="submitPriceRange" type="number" v-model="priceMax"
-            :placeholder="translate.priceFilter.maxField[route.params.lang]" />
-        <button @click="submitPriceRange">{{ translate.priceFilter.button[route.params.lang] }}</button>
+        <input @keyup.enter="submitPriceRange" type="number" v-model="priceMin" :placeholder="priceMinTranslated" />
+
+        <input @keyup.enter="submitPriceRange" type="number" v-model="priceMax" :placeholder="priceMaxTranslated" />
+
+        <button @click="submitPriceRange">{{ priceButtonTranslated }}</button>
     </div>
 </template>
