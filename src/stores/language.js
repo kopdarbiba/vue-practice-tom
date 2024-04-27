@@ -13,6 +13,9 @@ export const useLanguageStore = defineStore('language', () => {
   const priceMinTranslated = computed(() => translate.priceFilter.minField[route.params.lang])
   const priceMaxTranslated = computed(() => translate.priceFilter.maxField[route.params.lang])
   const priceButtonTranslated = computed(() => translate.priceFilter.button[route.params.lang])
+  const orderSelectorTipTranslated = computed(
+    () => translate.orderSelector.placeholder[route.params.lang]
+  )
   return {
     lessTogglerTranslated,
     moreTogglerTranslated,
@@ -20,6 +23,7 @@ export const useLanguageStore = defineStore('language', () => {
     searchButtonTranslated,
     priceMinTranslated,
     priceMaxTranslated,
-    priceButtonTranslated
+    priceButtonTranslated,
+    orderSelectorTipTranslated
   }
 })
