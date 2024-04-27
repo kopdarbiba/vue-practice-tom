@@ -1,9 +1,18 @@
+<script setup>import { useRoute } from 'vue-router'
+import transitions from './translate.json'
+
+const route = useRoute()
+
+</script>
+
 <template>
     <nav>
-
-        <RouterLink :to="{ name: 'home' }">home</RouterLink>
-        <RouterLink :to="{ name: 'search' }">Search</RouterLink>
-        <RouterLink :to="{ name: 'about' }">About</RouterLink>
+        <RouterLink :to="{ name: 'home', params: { lang: $route.params.lang } }">{{
+            transitions.home[route.params.lang] }}</RouterLink>
+        <RouterLink :to="{ name: 'search', params: { lang: $route.params.lang } }">
+            {{ transitions.search[route.params.lang] }}</RouterLink>
+        <RouterLink :to="{ name: 'about', params: { lang: $route.params.lang } }">{{
+            transitions.about[route.params.lang] }}</RouterLink>
     </nav>
 </template>
 

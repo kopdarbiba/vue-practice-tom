@@ -1,46 +1,26 @@
 <script setup>
-import { useLanguageStore } from '@/stores/language'
-import { useRoute } from 'vue-router'
-const language = useLanguageStore()
+import { useRouter, useRoute } from 'vue-router'
 
-
+const router = useRouter()
 const route = useRoute()
-function getLanguageButtonValue(langValue) {
-    console.log(route.name)
-    language.storedLanguage = langValue
+
+const submitLanguage = (language) => {
+    const newQuery = { ...route.query };
+
+    router.push({
+        name: route.name,
+        params: { lang: language },
+        query: newQuery
+    })
 }
+
 </script>
 
 <template>
-    <p>
-        $route:{{ $route }}
-    </p>
-    <div>
-        <p>
-            $route.fullPath: {{ $route.fullPath }}
-        </p>
-        <hr>
-        <p>
-            $route.name :{{ $route.name }}
-        </p>
-        <hr>
-        <p>
-            $route.query: {{ $route.query }}
-        </p>
-        <hr>
-        <p>
-            $route.params: {{ $route.params }}
-        </p>
-        <hr>
-        <p>
-            $route.params: {{ $route.href }}
-        </p>
-        <hr>
-    </div>
     <div class="language-buttons">
-        <button @click="getLanguageButtonValue('en')">en</button>
-        <button @click="getLanguageButtonValue('ru')">ru</button>
-        <button @click="getLanguageButtonValue('lv')">lv</button>
+        <button @click="submitLanguage('')">lv</button>
+        <button @click="submitLanguage('ru')">ru</button>
+        <button @click="submitLanguage('en')">en</button>
     </div>
 
 </template>

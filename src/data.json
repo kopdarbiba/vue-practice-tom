@@ -1,0 +1,1196 @@
+{
+  "meal": {
+    "title": { "lv": "Maltīte", "en": "Meals", "ru": "Еда" },
+    "data": [
+      {
+        "lv": "Brokastis",
+        "en": "Breakfast",
+        "ru": "Завтрак",
+        "slug": "breakfast",
+        "favorite": true
+      },
+      {
+        "lv": "Brančs",
+        "en": "Brunch",
+        "ru": "Бранч",
+        "slug": "brunch",
+        "favorite": true
+      },
+      {
+        "lv": "Pusdienas",
+        "en": "Lunch",
+        "ru": "Обед",
+        "slug": "lunch",
+        "favorite": true
+      },
+      {
+        "lv": "Vakariņas",
+        "en": "Dinner",
+        "ru": "Ужин",
+        "slug": "dinner",
+        "favorite": true
+      },
+      {
+        "lv": "Vieglas vēlās vakariņas",
+        "en": "Supper",
+        "ru": "Полдник",
+        "slug": "supper",
+        "favorite": true
+      },
+      {
+        "lv": "Uzkoda",
+        "en": "Snack",
+        "ru": "Легкая закуска",
+        "slug": "snack",
+        "favorite": false
+      },
+      {
+        "lv": "Deserts",
+        "en": "Dessert",
+        "ru": "Десерт",
+        "slug": "dessert",
+        "favorite": false
+      },
+      {
+        "lv": "Appetizer",
+        "en": "Appetizer",
+        "ru": "Аппетитная закуска",
+        "slug": "appetizer",
+        "favorite": false
+      },
+      {
+        "lv": "Pamatēdiens",
+        "en": "Main Course",
+        "ru": "Основное блюдо",
+        "slug": "main_course",
+        "favorite": false
+      },
+      {
+        "lv": "Piedeva",
+        "en": "Side Dish",
+        "ru": "Гарнир",
+        "slug": "side_dish",
+        "favorite": false
+      },
+      {
+        "lv": "Zupa",
+        "en": "Soup",
+        "ru": "Суп",
+        "slug": "soup",
+        "favorite": false
+      },
+      {
+        "lv": "Salāti",
+        "en": "Salad",
+        "ru": "Салат",
+        "slug": "salad",
+        "favorite": false
+      },
+      {
+        "lv": "Sviestmaize",
+        "en": "Sandwich",
+        "ru": "Бутерброд",
+        "slug": "sandwich",
+        "favorite": false
+      },
+      {
+        "lv": "Smūtijs",
+        "en": "Smoothie",
+        "ru": "Смузи",
+        "slug": "smoothie",
+        "favorite": false
+      },
+      {
+        "lv": "Dzēriens",
+        "en": "Beverage",
+        "ru": "Напиток",
+        "slug": "beverage",
+        "favorite": false
+      },
+      {
+        "lv": "Kokteilis",
+        "en": "Cocktail",
+        "ru": "Коктейль",
+        "slug": "cocktail",
+        "favorite": false
+      },
+      {
+        "lv": "Pica",
+        "en": "Pizza",
+        "ru": "Пицца",
+        "slug": "pizza",
+        "favorite": false
+      },
+      {
+        "lv": "Makaroni",
+        "en": "Pasta",
+        "ru": "Паста",
+        "slug": "pasta",
+        "favorite": false
+      }
+    ]
+  },
+  "cuisine": {
+    "title": { "lv": "Virtuve", "en": "Cuisine", "ru": "Кухня" },
+    "data": [
+      {
+        "lv": "Itāļu",
+        "en": "Italian",
+        "ru": "Итальянская",
+        "slug": "italian",
+        "favorite": true
+      },
+      {
+        "slug": "mexican",
+        "lv": "Meksikāņu",
+        "en": "Mexican",
+        "ru": "Мексиканская",
+        "favorite": true
+      },
+      {
+        "slug": "chinese",
+        "lv": "Ķīniešu",
+        "en": "Chinese",
+        "ru": "Китайская",
+        "favorite": true
+      },
+      {
+        "slug": "indian",
+        "lv": "Indiešu",
+        "en": "Indian",
+        "ru": "Индийская",
+        "favorite": false
+      },
+      {
+        "slug": "japanese",
+        "lv": "Japāņu",
+        "en": "Japanese",
+        "ru": "Японская",
+        "favorite": false
+      },
+      {
+        "slug": "french",
+        "lv": "Franču",
+        "en": "French",
+        "ru": "Французская",
+        "favorite": false
+      },
+      {
+        "slug": "mediterranean",
+        "lv": "Vidusjūras",
+        "en": "Mediterranean",
+        "ru": "Средиземноморская",
+        "favorite": false
+      },
+      {
+        "slug": "thai",
+        "lv": "Taizemiešu",
+        "en": "Thai",
+        "ru": "Тайская",
+        "favorite": false
+      },
+      {
+        "slug": "greek",
+        "lv": "Grieķu",
+        "en": "Greek",
+        "ru": "Греческая",
+        "favorite": false
+      },
+      {
+        "slug": "spanish",
+        "lv": "Spāņu",
+        "en": "Spanish",
+        "ru": "Испанская",
+        "favorite": false
+      },
+      {
+        "slug": "american",
+        "lv": "Amerikāņu",
+        "en": "American",
+        "ru": "Американская",
+        "favorite": false
+      },
+      {
+        "slug": "middle_eastern",
+        "lv": "Tuvo Austrumu",
+        "en": "Middle Eastern",
+        "ru": "Ближневосточная",
+        "favorite": false
+      },
+      {
+        "slug": "korean",
+        "lv": "Korejiešu",
+        "en": "Korean",
+        "ru": "Корейская",
+        "favorite": false
+      },
+      {
+        "slug": "vietnamese",
+        "lv": "Vjetnamiešu",
+        "en": "Vietnamese",
+        "ru": "Вьетнамская",
+        "favorite": false
+      },
+      {
+        "slug": "brazilian",
+        "lv": "Brazīļu",
+        "en": "Brazilian",
+        "ru": "Бразильская",
+        "favorite": false
+      },
+      {
+        "slug": "caribbean",
+        "lv": "Karībiešu",
+        "en": "Caribbean",
+        "ru": "Карибская",
+        "favorite": false
+      },
+      {
+        "slug": "cajun_creole",
+        "lv": "Kreolu",
+        "en": "Cajun/Creole",
+        "ru": "Каджунская/Креольская",
+        "favorite": false
+      },
+      {
+        "slug": "moroccan",
+        "lv": "Marokāņu",
+        "en": "Moroccan",
+        "ru": "Марокканская",
+        "favorite": false
+      },
+      {
+        "slug": "ethiopian",
+        "lv": "Etiopiešu",
+        "en": "Ethiopian",
+        "ru": "Эфиопская",
+        "favorite": false
+      },
+      {
+        "slug": "russian",
+        "lv": "Krievu",
+        "en": "Russian",
+        "ru": "Русская",
+        "favorite": false
+      },
+      {
+        "slug": "latvian",
+        "lv": "Latviešu",
+        "en": "Latvian",
+        "ru": "Латвийская",
+        "favorite": false
+      },
+      {
+        "slug": "georgian",
+        "lv": "Gruzīņu",
+        "en": "Georgian",
+        "ru": "Грузинская",
+        "favorite": false
+      },
+      {
+        "slug": "armenian",
+        "lv": "Armēņu",
+        "en": "Armenian",
+        "ru": "Армянская",
+        "favorite": false
+      }
+    ]
+  },
+  "occasion": {
+    "title": { "lv": "Notikums", "en": "Occasion", "ru": "Событие" },
+    "data": [
+      {
+        "slug": "spring",
+        "lv": "Pavasaris",
+        "en": "Spring",
+        "ru": "Весна",
+        "favorite": true
+      },
+      {
+        "slug": "summer",
+        "lv": "Vasara",
+        "en": "Summer",
+        "ru": "Лето",
+        "favorite": true
+      },
+      {
+        "slug": "autumn",
+        "lv": "Rudens",
+        "en": "Autumn",
+        "ru": "Осень",
+        "favorite": false
+      },
+      {
+        "slug": "winter",
+        "lv": "Ziema",
+        "en": "Winter",
+        "ru": "Зима",
+        "favorite": false
+      },
+      {
+        "slug": "christmas",
+        "lv": "Ziemassvētki",
+        "en": "Christmas",
+        "ru": "Рождество",
+        "favorite": false
+      },
+      {
+        "slug": "thanksgiving",
+        "lv": "Pateicības diena",
+        "en": "Thanksgiving",
+        "ru": "День Благодарения",
+        "favorite": false
+      },
+      {
+        "slug": "easter",
+        "lv": "Lieldienas",
+        "en": "Easter",
+        "ru": "Пасха",
+        "favorite": false
+      },
+      {
+        "slug": "halloween",
+        "lv": "Helovīns",
+        "en": "Halloween",
+        "ru": "Хэллоуин",
+        "favorite": false
+      },
+      {
+        "slug": "diwali",
+        "lv": "Divali",
+        "en": "Diwali",
+        "ru": "Дивали",
+        "favorite": false
+      },
+      {
+        "slug": "ramadan",
+        "lv": "Ramadāns",
+        "en": "Ramadan",
+        "ru": "Рамадан",
+        "favorite": false
+      },
+      {
+        "slug": "hanukkah",
+        "lv": "Hanuka",
+        "en": "Hanukkah",
+        "ru": "Ханука",
+        "favorite": false
+      },
+      {
+        "slug": "chinese_new_year",
+        "lv": "Ķīniešu Jaunais Gads",
+        "en": "Chinese New Year",
+        "ru": "Китайский Новый Год",
+        "favorite": false
+      },
+      {
+        "slug": "birthday",
+        "lv": "Dzimšanas diena",
+        "en": "Birthday",
+        "ru": "День Рождения",
+        "favorite": false
+      },
+      {
+        "slug": "wedding",
+        "lv": "Kāzas",
+        "en": "Wedding",
+        "ru": "Свадьба",
+        "favorite": false
+      },
+      {
+        "slug": "anniversary",
+        "lv": "Gadadiena",
+        "en": "Anniversary",
+        "ru": "Годовщина",
+        "favorite": false
+      },
+      {
+        "slug": "engagement_party",
+        "lv": "Saderināšanās ballīte",
+        "en": "Engagement Party",
+        "ru": "Помолвка",
+        "favorite": false
+      },
+      {
+        "slug": "italian_night",
+        "lv": "Itāļu vakars",
+        "en": "Italian Night",
+        "ru": "Итальянская ночь",
+        "favorite": false
+      },
+      {
+        "slug": "mexican_night",
+        "lv": "Meksikāņu vakars",
+        "en": "Mexican Night",
+        "ru": "Мексиканская ночь",
+        "favorite": false
+      },
+      {
+        "slug": "indian_night",
+        "lv": "Indijas vakars",
+        "en": "Indian Night",
+        "ru": "Индийская ночь",
+        "favorite": false
+      },
+      {
+        "slug": "asian_night",
+        "lv": "Āzijas vakars",
+        "en": "Asian Night",
+        "ru": "Азиатская ночь",
+        "favorite": false
+      },
+      {
+        "slug": "mediterranean_night",
+        "lv": "Vidusjūras vakars",
+        "en": "Mediterranean Night",
+        "ru": "Средиземноморская ночь",
+        "favorite": false
+      },
+      {
+        "slug": "dinner_party",
+        "lv": "Vakariņu ballīte",
+        "en": "Dinner Party",
+        "ru": "Ужин-вечеринка",
+        "favorite": false
+      },
+      {
+        "slug": "cocktail_party",
+        "lv": "Kokteiļu ballīte",
+        "en": "Cocktail Party",
+        "ru": "Коктейльная вечеринка",
+        "favorite": false
+      },
+      {
+        "slug": "potluck",
+        "lv": "Kopīgas maltītes ballīte",
+        "en": "Potluck",
+        "ru": "Потлак",
+        "favorite": false
+      },
+      {
+        "slug": "bbq",
+        "lv": "Grila ballīte",
+        "en": "BBQ",
+        "ru": "Барбекю",
+        "favorite": false
+      },
+      {
+        "slug": "picnic",
+        "lv": "Pikniks",
+        "en": "Picnic",
+        "ru": "Пикник",
+        "favorite": false
+      },
+      {
+        "slug": "spring_fresh_ingredients",
+        "lv": "Pavasara svaigie produkti",
+        "en": "Spring Fresh Ingredients",
+        "ru": "Весенние Свежие Ингредиенты",
+        "favorite": false
+      },
+      {
+        "slug": "autumn_harvest",
+        "lv": "Rudens raža",
+        "en": "Autumn Harvest",
+        "ru": "Осенний Урожай",
+        "favorite": false
+      },
+      {
+        "slug": "new_england_seafood",
+        "lv": "Jaunanglijas jūras veltes",
+        "en": "New England Seafood",
+        "ru": "Морепродукты Новой Англии",
+        "favorite": false
+      },
+      {
+        "slug": "southwest_spicy",
+        "lv": "Dienvideiropas asais",
+        "en": "Southwest Spicy",
+        "ru": "Юго-Западная Острая",
+        "favorite": false
+      },
+      {
+        "slug": "mediterranean_flavors",
+        "lv": "Vidusjūras garšas",
+        "en": "Mediterranean Flavors",
+        "ru": "Средиземноморские Вкусы",
+        "favorite": false
+      }
+    ]
+  },
+  "unit": {
+    "title": { "lv": "Mērvienība", "en": "Unit", "ru": "Единица измерения" },
+    "data": [
+      {
+        "slug": "teaspoon_tsp",
+        "lv": "Tējkarote (tējk.)",
+        "en": "Teaspoon (tsp)",
+        "ru": "Чайная ложка (ч. л.)",
+        "favorite": true
+      },
+      {
+        "slug": "tablespoon_tbsp",
+        "lv": "Ēdamkarote (ēd.k.)",
+        "en": "Tablespoon (tbsp)",
+        "ru": "Столовая ложка (ст. л.)",
+        "favorite": true
+      },
+      {
+        "slug": "fluid_ounce_fl_oz",
+        "lv": "Šķidrā unce (šķidr. oz)",
+        "en": "Fluid ounce (fl oz)",
+        "ru": "Жидкая унция (ж. унц.)",
+        "favorite": true
+      },
+      {
+        "slug": "cup_c",
+        "lv": "Glāze",
+        "en": "Cup (c)",
+        "ru": "Чашка (ч.)",
+        "favorite": false
+      },
+      {
+        "slug": "pint_pt",
+        "lv": "Pinte (pt)",
+        "en": "Pint (pt)",
+        "ru": "Пинта (пт.)",
+        "favorite": false
+      },
+      {
+        "slug": "quart_qt",
+        "lv": "Kvarts (qt)",
+        "en": "Quart (qt)",
+        "ru": "Кварта (квт.)",
+        "favorite": false
+      },
+      {
+        "slug": "gallon_gal",
+        "lv": "Gallons (gal)",
+        "en": "Gallon (gal)",
+        "ru": "Галлон (гал.)",
+        "favorite": false
+      },
+      {
+        "slug": "milliliter_ml",
+        "lv": "Mililitrs (ml)",
+        "en": "Milliliter (ml)",
+        "ru": "Миллилитр (мл)",
+        "favorite": false
+      },
+      {
+        "slug": "liter_l",
+        "lv": "Litrs (L)",
+        "en": "Liter (L)",
+        "ru": "Литр (л)",
+        "favorite": false
+      },
+      {
+        "slug": "ounce_oz",
+        "lv": "Unce (oz)",
+        "en": "Ounce (oz)",
+        "ru": "Унция (унц.)",
+        "favorite": false
+      },
+      {
+        "slug": "pound_lb",
+        "lv": "Mārciņa (lb)",
+        "en": "Pound (lb)",
+        "ru": "Фунт (фт.)",
+        "favorite": false
+      },
+      {
+        "slug": "gram_g",
+        "lv": "Grams (g)",
+        "en": "Gram (g)",
+        "ru": "Грамм (г)",
+        "favorite": false
+      },
+      {
+        "slug": "kilogram_kg",
+        "lv": "Kilograms (kg)",
+        "en": "Kilogram (kg)",
+        "ru": "Килограмм (кг)",
+        "favorite": false
+      },
+      {
+        "slug": "inch_in",
+        "lv": "Colla (in)",
+        "en": "Inch (in)",
+        "ru": "Дюйм (дюйм)",
+        "favorite": false
+      },
+      {
+        "slug": "foot_ft",
+        "lv": "Pēda (ft)",
+        "en": "Foot (ft)",
+        "ru": "Фут (фт)",
+        "favorite": false
+      },
+      {
+        "slug": "centimeter_cm",
+        "lv": "Centimetrs (cm)",
+        "en": "Centimeter (cm)",
+        "ru": "Сантиметр (см)",
+        "favorite": false
+      },
+      {
+        "slug": "meter_m",
+        "lv": "Metrs (m)",
+        "en": "Meter (m)",
+        "ru": "Метр (м)",
+        "favorite": false
+      },
+      {
+        "slug": "fahrenheit_f",
+        "lv": "Fārenheits (°F)",
+        "en": "Fahrenheit (°F)",
+        "ru": "Фаренгейт (°F)",
+        "favorite": false
+      },
+      {
+        "slug": "celsius_c",
+        "lv": "Celsija (°C)",
+        "en": "Celsius (°C)",
+        "ru": "Цельсий (°C)",
+        "favorite": false
+      },
+      {
+        "slug": "each",
+        "lv": "Katrs",
+        "en": "Each",
+        "ru": "Каждый",
+        "favorite": false
+      },
+      {
+        "slug": "dozen",
+        "lv": "Ducis",
+        "en": "Dozen",
+        "ru": "Дюжина",
+        "favorite": false
+      }
+    ]
+  },
+  "dietary_preference": {
+    "title": {
+      "lv": "Dietāras preferences",
+      "en": "Dietary Preferences",
+      "ru": "Диетические предпочтения"
+    },
+    "data": [
+      {
+        "slug": "vegetarian",
+        "lv": "Veģetārs",
+        "en": "Vegetarian",
+        "ru": "Вегетарианец",
+        "favorite": true
+      },
+      {
+        "slug": "plant_based",
+        "lv": "Augu izcelsme",
+        "en": "Plant-based",
+        "ru": "Растительное",
+        "favorite": true
+      },
+      {
+        "slug": "vegan",
+        "lv": "Vegāns",
+        "en": "Vegan",
+        "ru": "Веган",
+        "favorite": false
+      },
+      {
+        "slug": "paleo",
+        "lv": "Paleo",
+        "en": "Paleo",
+        "ru": "Палео",
+        "favorite": false
+      },
+      {
+        "slug": "gluten_free",
+        "lv": "Bezglutēna",
+        "en": "Gluten-Free",
+        "ru": "Без глютена",
+        "favorite": false
+      },
+      {
+        "slug": "keto",
+        "lv": "Keto",
+        "en": "Keto",
+        "ru": "Кето",
+        "favorite": false
+      },
+      {
+        "slug": "low_carb",
+        "lv": "Zems ogļhidrātu saturs",
+        "en": "Low-Carb",
+        "ru": "Низкоуглеводный",
+        "favorite": false
+      },
+      {
+        "slug": "dairy_free",
+        "lv": "Bez piena",
+        "en": "Dairy-Free",
+        "ru": "Без молочных продуктов",
+        "favorite": false
+      },
+      {
+        "slug": "nut_free",
+        "lv": "Bez riekstiem",
+        "en": "Nut-Free",
+        "ru": "Без орехов",
+        "favorite": false
+      },
+      {
+        "slug": "low_fat",
+        "lv": "Zems tauku saturs",
+        "en": "Low-Fat",
+        "ru": "Низкожировой",
+        "favorite": false
+      },
+      {
+        "slug": "high_protein",
+        "lv": "Proteīnu piesātināts",
+        "en": "High-Protein",
+        "ru": "Богатый белком",
+        "favorite": false
+      },
+      {
+        "slug": "mediterranean",
+        "lv": "Vidusjūras",
+        "en": "Mediterranean",
+        "ru": "Средиземноморский",
+        "favorite": false
+      },
+      {
+        "slug": "pescatarian",
+        "lv": "Pesketārs",
+        "en": "Pescatarian",
+        "ru": "Пескетарианец",
+        "favorite": false
+      },
+      {
+        "slug": "flexitarian",
+        "lv": "Fleksitārs",
+        "en": "Flexitarian",
+        "ru": "Флекситарианец",
+        "favorite": false
+      },
+      {
+        "slug": "whole30",
+        "lv": "Whole30",
+        "en": "Whole30",
+        "ru": "Веган Whole30",
+        "favorite": false
+      },
+      {
+        "slug": "ovo_lacto_vegetarian",
+        "lv": "Ovo-lakto-veģetārs",
+        "en": "Ovo-lacto-vegetarian",
+        "ru": "Ово-лакто-вегетарианец",
+        "favorite": false
+      },
+      {
+        "slug": "ovo_vegetarian",
+        "lv": "Ovo-veģetārs",
+        "en": "Ovo-vegetarian",
+        "ru": "Ово-вегетарианец",
+        "favorite": false
+      },
+      {
+        "slug": "lacto_vegetarian",
+        "lv": "Lakto-veģetārs",
+        "en": "Lacto-vegetarian",
+        "ru": "Лакто-вегетарианец",
+        "favorite": false
+      },
+      {
+        "slug": "omnivorous",
+        "lv": "Visēdājs",
+        "en": "Omnivorous",
+        "ru": "Omnivorous",
+        "favorite": false
+      }
+    ]
+  },
+  "equipment": {
+    "title": { "lv": "Iekārtas", "en": "Equipment", "ru": "Оборудование" },
+    "data": [
+      {
+        "slug": "stove",
+        "lv": "Plīts virsma",
+        "en": "Stove",
+        "ru": "Плита",
+        "favorite": true
+      },
+      {
+        "slug": "oven",
+        "lv": "Cepeškrāsns",
+        "en": "Oven",
+        "ru": "Духовка",
+        "favorite": true
+      },
+      {
+        "slug": "grill",
+        "lv": "Grils",
+        "en": "Grill",
+        "ru": "Гриль",
+        "favorite": true
+      },
+      {
+        "slug": "microwave",
+        "lv": "Mikroviļņu krāsns",
+        "en": "Microwave",
+        "ru": "Микроволновая печь",
+        "favorite": false
+      },
+      {
+        "slug": "blender",
+        "lv": "Blenderis",
+        "en": "Blender",
+        "ru": "Блендер",
+        "favorite": false
+      },
+      {
+        "slug": "grinder_chopper",
+        "lv": "Dzirnaviņas/Smalcinātājs",
+        "en": "Grinder/Chopper",
+        "ru": "Измельчитель / Шинковщик",
+        "favorite": false
+      },
+      {
+        "slug": "baking_sheets",
+        "lv": "Cepampapīrs",
+        "en": "Baking sheets",
+        "ru": "Противень для выпечки",
+        "favorite": false
+      },
+      {
+        "slug": "grater",
+        "lv": "Rīve",
+        "en": "Grater",
+        "ru": "Терка",
+        "favorite": false
+      },
+      {
+        "slug": "whisk",
+        "lv": "Putotājs",
+        "en": "Whisk",
+        "ru": "Венчик",
+        "favorite": false
+      },
+      {
+        "slug": "waffle_pan",
+        "lv": "Vafeļpanna",
+        "en": "Waffle pan",
+        "ru": "Вафельница",
+        "favorite": false
+      },
+      {
+        "slug": "mixing_glass",
+        "lv": "Miksglāze",
+        "en": "Mixing glass",
+        "ru": "Стакан для смешивания",
+        "favorite": false
+      },
+      {
+        "slug": "thermometer",
+        "lv": "Termometrs",
+        "en": "Thermometer",
+        "ru": "Термометр",
+        "favorite": false
+      },
+      {
+        "slug": "kitchen_scale",
+        "lv": "Virtuves svari",
+        "en": "Kitchen scale",
+        "ru": "Кухонные весы",
+        "favorite": false
+      },
+      {
+        "slug": "timer",
+        "lv": "Taimeris",
+        "en": "Timer",
+        "ru": "Таймер",
+        "favorite": false
+      }
+    ]
+  },
+  "allergen": {
+    "title": { "lv": "Alerģēns", "en": "Allergen", "ru": "Аллерген" },
+    "data": [
+      {
+        "slug": "milk",
+        "lv": "Piens",
+        "en": "Milk",
+        "ru": "Молоко",
+        "favorite": true
+      },
+      {
+        "slug": "eggs",
+        "lv": "Olas",
+        "en": "Eggs",
+        "ru": "Яйца",
+        "favorite": true
+      },
+      {
+        "slug": "peanuts",
+        "lv": "Zemesrieksti",
+        "en": "Peanuts",
+        "ru": "Арахис",
+        "favorite": true
+      },
+      {
+        "slug": "tree_nuts",
+        "lv": "Rieksti",
+        "en": "Tree nuts",
+        "ru": "Орехи",
+        "favorite": false
+      },
+      {
+        "slug": "soy",
+        "lv": "Soja",
+        "en": "Soy",
+        "ru": "Соя",
+        "favorite": false
+      },
+      {
+        "slug": "wheat",
+        "lv": "Kvieši",
+        "en": "Wheat",
+        "ru": "Пшеница",
+        "favorite": false
+      },
+      {
+        "slug": "fish",
+        "lv": "Zivis",
+        "en": "Fish",
+        "ru": "Рыба",
+        "favorite": false
+      },
+      {
+        "slug": "shellfish",
+        "lv": "Vēžveidīgie",
+        "en": "Shellfish",
+        "ru": "Морепродукты",
+        "favorite": false
+      },
+      {
+        "slug": "sesame_seeds",
+        "lv": "Sezama sēklas",
+        "en": "Sesame seeds",
+        "ru": "Семена кунжута",
+        "favorite": false
+      },
+      {
+        "slug": "mustard",
+        "lv": "Sinepes",
+        "en": "Mustard",
+        "ru": "Горчица",
+        "favorite": false
+      },
+      {
+        "slug": "celery",
+        "lv": "Selerija",
+        "en": "Celery",
+        "ru": "Сельдерей",
+        "favorite": false
+      }
+    ]
+  },
+  "cooking_method": {
+    "title": { "lv": "Gatavošanas metode", "en": "Cooking Method", "ru": "Метод приготовления" },
+    "data": [
+      {
+        "slug": "gather",
+        "lv": "Savākt",
+        "en": "Gather",
+        "ru": "Собирать",
+        "favorite": true
+      },
+      {
+        "slug": "preheat",
+        "lv": "Uzsildīt",
+        "en": "Preheat",
+        "ru": "Разогревать",
+        "favorite": true
+      },
+      {
+        "slug": "prepare",
+        "lv": "Sagatavot",
+        "en": "Prepare",
+        "ru": "Приготовить",
+        "favorite": true
+      },
+      {
+        "slug": "wash",
+        "lv": "Nomazgāt",
+        "en": "Wash",
+        "ru": "Вымыть",
+        "favorite": true
+      },
+      {
+        "slug": "peel",
+        "lv": "Nolobīt",
+        "en": "Peel",
+        "ru": "Очистить",
+        "favorite": false
+      },
+      {
+        "slug": "chop",
+        "lv": "Sasmalcināt",
+        "en": "Chop",
+        "ru": "Мелко порубить",
+        "favorite": false
+      },
+      {
+        "slug": "add",
+        "lv": "Pievienot",
+        "en": "Add",
+        "ru": "Добавить",
+        "favorite": false
+      },
+      {
+        "slug": "combine",
+        "lv": "Apvienot",
+        "en": "Combine",
+        "ru": "Соединить",
+        "favorite": false
+      },
+      {
+        "slug": "mix",
+        "lv": "Sajaukt",
+        "en": "Mix",
+        "ru": "Мешать",
+        "favorite": false
+      },
+      {
+        "slug": "cook",
+        "lv": "Gatavot",
+        "en": "Cook",
+        "ru": "Готовить",
+        "favorite": false
+      },
+      {
+        "slug": "stir",
+        "lv": "Maisīt",
+        "en": "Stir",
+        "ru": "Перемешивать",
+        "favorite": false
+      },
+      {
+        "slug": "fry",
+        "lv": "Cept",
+        "en": "Fry",
+        "ru": "Жарить",
+        "favorite": false
+      },
+      {
+        "slug": "taste",
+        "lv": "Garšot",
+        "en": "Taste",
+        "ru": "Пробовать на вкус",
+        "favorite": false
+      },
+      {
+        "slug": "rest",
+        "lv": "Atlaidināt",
+        "en": "Rest",
+        "ru": "Отдохнуть",
+        "favorite": false
+      },
+      {
+        "slug": "garnish",
+        "lv": "Rotāt",
+        "en": "Garnish",
+        "ru": "Украсить",
+        "favorite": false
+      },
+      {
+        "slug": "serve",
+        "lv": "Pasniegt",
+        "en": "Serve",
+        "ru": "Подавать",
+        "favorite": false
+      },
+      {
+        "slug": "store",
+        "lv": "Uzglabāt",
+        "en": "Store",
+        "ru": "Хранить",
+        "favorite": false
+      },
+      {
+        "slug": "boil",
+        "lv": "Vārīt",
+        "en": "Boil",
+        "ru": "Boil",
+        "favorite": false
+      }
+    ]
+  },
+  "ingredient_category": {
+    "title": {
+      "lv": "Sastāvdaļu kategorija",
+      "en": "Ingredient Category",
+      "ru": "Категория ингредиента"
+    },
+    "data": [
+      {
+        "slug": "vegetables",
+        "lv": "Dārzeņi",
+        "en": "Vegetables",
+        "ru": "Овощи",
+        "favorite": true
+      },
+      {
+        "slug": "fruits",
+        "lv": "Augļi",
+        "en": "Fruits",
+        "ru": "Фрукты",
+        "favorite": true
+      },
+      {
+        "slug": "proteins",
+        "lv": "Olbaltumvielas",
+        "en": "Proteins",
+        "ru": "Белки",
+        "favorite": false
+      },
+      {
+        "slug": "grains",
+        "lv": "Graudi",
+        "en": "Grains",
+        "ru": "Злаки",
+        "favorite": false
+      },
+      {
+        "slug": "dairy_and_alternatives",
+        "lv": "Piena produkti un alternatīvas",
+        "en": "Dairy and Alternatives",
+        "ru": "Молочные продукты и альтернативы",
+        "favorite": true
+      },
+      {
+        "slug": "herbs_and_spices",
+        "lv": "Garšaugi un piedevas",
+        "en": "Herbs and Spices",
+        "ru": "Травы и специи",
+        "favorite": false
+      },
+      {
+        "slug": "condiments",
+        "lv": "Garšvielas",
+        "en": "Condiments",
+        "ru": "Приправы",
+        "favorite": false
+      },
+      {
+        "slug": "nuts_and_seeds",
+        "lv": "Rieksti un sēklas",
+        "en": "Nuts and Seeds",
+        "ru": "Орехи и семечки",
+        "favorite": false
+      }
+    ]
+  }
+}
