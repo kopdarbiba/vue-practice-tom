@@ -1,13 +1,11 @@
 <script setup>
 import { useRouter, useRoute } from 'vue-router'
 import { ref, computed } from 'vue'
-import { useLanguageStore } from '@/stores/language'
-import { storeToRefs } from 'pinia'
+import { useI18n } from 'vue-i18n';
 
+const { t } = useI18n();
 const router = useRouter()
 const route = useRoute()
-const store = useLanguageStore()
-const { priceMinTranslated, priceMaxTranslated, priceButtonTranslated } = storeToRefs(store)
 
 const priceMin = ref(route.query.minPrice)
 const priceMax = ref(route.query.maxPrice)
@@ -40,10 +38,12 @@ const submitPriceRange = () => {
 
 <template>
     <div class="filter-recipes-by-price">
-        <input @keyup.enter="submitPriceRange" type="number" v-model="priceMin" :placeholder="priceMinTranslated" />
+        <input @keyup.enter="submitPriceRange" type="number" v-model="priceMin"
+            :placeholder="t('searchPage.priceFilter.minField')" />
 
-        <input @keyup.enter="submitPriceRange" type="number" v-model="priceMax" :placeholder="priceMaxTranslated" />
+        <input @keyup.enter="submitPriceRange" type="number" v-model="priceMax"
+            :placeholder="t('searchPage.priceFilter.maxField')" />
 
-        <button @click="submitPriceRange">{{ priceButtonTranslated }}</button>
+        <button @click="submitPriceRange">{{ t('searchPage.priceFilter.button') }}</button>
     </div>
 </template>

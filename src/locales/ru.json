@@ -1,0 +1,34 @@
+{
+  "searchPage": {
+    "searchQuery": {
+      "button": "Поиск",
+      "search_box": "Поиск рецепта"
+    },
+    "orderSelector": {
+      "placeholder": "Сортировать по",
+      "options": {
+        "": "фаворит",
+        "price_ascend": "Самое дешевое",
+        "price_desc": "Самое дорогое",
+        "cooking_time_ascend": "Мин. время",
+        "cooking_time_desc": "Макс. время",
+        "servings_ascend": "Меньше порций",
+        "servings_desc": "Больше порций"
+      }
+    },
+    "priceFilter": {
+      "minField": "От",
+      "maxField": "До",
+      "button": "Перейти"
+    },
+    "checkBox": {
+      "seeMore": "показать больше",
+      "seeLess": "показать меньше"
+    }
+  },
+  "navBar": {
+    "home": "Домой",
+    "search": "Поиск",
+    "about": "О нас"
+  }
+}

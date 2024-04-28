@@ -1,15 +1,11 @@
 <script setup>
 import { useRouter, useRoute } from 'vue-router'
 import { ref, computed } from 'vue'
-import { storeToRefs } from 'pinia'
-import { useLanguageStore } from '@/stores/language'
-
-const store = useLanguageStore()
-const { searchBoxTranslated, searchButtonTranslated } = storeToRefs(store)
+import { useI18n } from 'vue-i18n'
 
 const router = useRouter()
 const route = useRoute()
-
+const { t } = useI18n()
 const searchBoxInput = ref()
 
 const computeNewQuery = computed(() => {
@@ -33,7 +29,8 @@ const submitSearch = () => {
 
 <template>
     <div class="search-recipes">
-        <input @keyup.enter="submitSearch" v-model="searchBoxInput" :placeholder="searchBoxTranslated">
-        <button @click="submitSearch">{{ searchButtonTranslated }}</button>
+        <input @keyup.enter="submitSearch" v-model="searchBoxInput"
+            :placeholder="t('searchPage.searchQuery.search_box')">
+        <button @click="submitSearch">{{ t('searchPage.searchQuery.button') }}</button>
     </div>
 </template>

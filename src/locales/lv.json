@@ -1,0 +1,34 @@
+{
+  "searchPage": {
+    "searchQuery": {
+      "button": "Meklēt",
+      "search_box": "Meklēt recepti"
+    },
+    "orderSelector": {
+      "placeholder": "Kārtot pēc",
+      "options": {
+        "": "Populārākās",
+        "price_ascend": "Lētākie",
+        "price_desc": "Dārgākie",
+        "cooking_time_ascend": "Gatavošanas laiks (aug)",
+        "cooking_time_desc": "Gatavošanas laiks (dil)",
+        "servings_ascend": "Mazāk porcijas",
+        "servings_desc": "Vairāk porcijas"
+      }
+    },
+    "priceFilter": {
+      "minField": "No",
+      "maxField": "Līdz",
+      "button": "Filtrēt"
+    },
+    "checkBox": {
+      "seeMore": "vairāk",
+      "seeLess": "mazāk"
+    }
+  },
+  "navBar": {
+    "home": "Sākums",
+    "search": "Meklēt",
+    "about": "Par mums"
+  }
+}

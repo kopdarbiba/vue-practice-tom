@@ -1,15 +1,12 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
-import { useLanguageStore } from '@/stores/language'
-import { storeToRefs } from 'pinia'
+import { useI18n } from 'vue-i18n';
 
+const { t } = useI18n();
 const router = useRouter()
 const route = useRoute()
-const store = useLanguageStore()
-
 const { block, itemKey } = defineProps(['block', 'itemKey'])
-const { lessTogglerTranslated, moreTogglerTranslated } = storeToRefs(store)
 
 const itemArray = ref([])
 
@@ -48,7 +45,7 @@ const filteredMeals = computed(() => {
         : block.data
 })
 
-const buttonText = computed(() => showLess.value ? moreTogglerTranslated : lessTogglerTranslated)
+const buttonText = computed(() => showLess.value ? t('searchPage.checkBox.seeMore') : t('searchPage.checkBox.seeLess'))
 
 </script>
 
