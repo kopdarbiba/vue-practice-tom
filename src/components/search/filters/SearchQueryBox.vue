@@ -6,7 +6,7 @@ import { useI18n } from 'vue-i18n'
 const router = useRouter()
 const route = useRoute()
 const { t } = useI18n()
-const searchBoxInput = ref()
+const searchBoxInput = ref(route.query.q || '')
 
 const computeNewQuery = computed(() => {
     if (searchBoxInput.value) {
