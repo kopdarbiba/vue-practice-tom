@@ -1,7 +1,7 @@
 <script setup>
 import { RouterView } from 'vue-router'
 import PageHeader from './components/header/PageHeader.vue'
-import LangugaeButtons from './components/internationalization/LanguageButtons.vue'
+import LangugaeButtons from './components/i18n/LanguageButtons.vue'
 import TheNavigation from './components/navbar/TheNavigation.vue'
 </script>
 

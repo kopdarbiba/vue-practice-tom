@@ -1,15 +1,12 @@
 <script setup>
 import { useRouter, useRoute } from 'vue-router'
 import { ref, computed } from 'vue'
-import { storeToRefs } from 'pinia'
-import { useLanguageStore } from '@/stores/language'
-import translate from './translate.json'
+import { useI18n } from 'vue-i18n'
 
 
+const { messages, locale } = useI18n()
 const router = useRouter()
 const route = useRoute()
-const store = useLanguageStore()
-const { orderSelectorTipTranslated } = storeToRefs(store)
 const selectedOrder = ref(route.query.order || '')
 
 const computedQuery = computed(() => {
@@ -30,17 +27,14 @@ const submitOrdering = () => {
     });
 };
 
-const getOptionsTranslation = (key) => {
-    return translate.orderSelector.options[key][route.params.lang]
-}
-
 </script>
 
 <template>
     <div class="order-recipes">
         <select @change="submitOrdering" v-model="selectedOrder">
-            <option v-for="(option, key) in translate.orderSelector.options" :key="option.id" :value="key">
-                {{ orderSelectorTipTranslated }}: {{ getOptionsTranslation(key) }}
+            <option v-for="(option, key) in messages[locale].searchPage.orderSelector.options" :key="option.id"
+                :value="key">
+                {{ option }}
             </option>
         </select>
     </div>

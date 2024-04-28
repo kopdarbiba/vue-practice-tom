@@ -1,18 +1,15 @@
-<script setup>import { useRoute } from 'vue-router'
-import transitions from './translate.json'
+<script setup>
+import { useI18n } from 'vue-i18n';
 
-const route = useRoute()
+const { t } = useI18n();
 
 </script>
 
 <template>
     <nav>
-        <RouterLink :to="{ name: 'home', params: { lang: $route.params.lang } }">{{
-            transitions.home[route.params.lang] }}</RouterLink>
-        <RouterLink :to="{ name: 'search', params: { lang: $route.params.lang } }">
-            {{ transitions.search[route.params.lang] }}</RouterLink>
-        <RouterLink :to="{ name: 'about', params: { lang: $route.params.lang } }">{{
-            transitions.about[route.params.lang] }}</RouterLink>
+        <RouterLink :to="{ name: 'home', params: { lang: $route.params.lang } }">{{ t('navBar.home') }}</RouterLink>
+        <RouterLink :to="{ name: 'search', params: { lang: $route.params.lang } }">{{ t('navBar.search') }}</RouterLink>
+        <RouterLink :to="{ name: 'about', params: { lang: $route.params.lang } }">{{ t('navBar.about') }}</RouterLink>
     </nav>
 </template>
 

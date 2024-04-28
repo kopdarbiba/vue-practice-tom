@@ -1,0 +1,34 @@
+{
+  "searchPage": {
+    "searchQuery": {
+      "button": "Search",
+      "search_box": "Search Recipe"
+    },
+    "orderSelector": {
+      "placeholder": "Sort by",
+      "options": {
+        "": "Favorite",
+        "price_ascend": "Lowest Price",
+        "price_desc": "Highest Price",
+        "cooking_time_ascend": "Shortest Time",
+        "cooking_time_desc": "Longest Time",
+        "servings_ascend": "Fewest Servings",
+        "servings_desc": "Most Servings"
+      }
+    },
+    "priceFilter": {
+      "minField": "From",
+      "maxField": "To",
+      "button": "Go"
+    },
+    "checkBox": {
+      "seeMore": "See more",
+      "seeLess": "See less"
+    }
+  },
+  "navBar": {
+    "home": "Home",
+    "search": "Search",
+    "about": "About"
+  }
+}
