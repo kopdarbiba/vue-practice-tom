@@ -34,3 +34,9 @@ const submitSearch = () => {
         <button @click="submitSearch">{{ t('searchPage.searchQuery.button') }}</button>
     </div>
 </template>
+
+<style scoped>
+input {
+    width: 100px;
+}
+</style>

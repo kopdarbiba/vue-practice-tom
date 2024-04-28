@@ -1,20 +1,19 @@
 <script setup>
-import { RouterView } from 'vue-router'
-import PageHeader from './components/header/PageHeader.vue'
 import LangugaeButtons from './components/i18n/LanguageButtons.vue'
 import TheNavigation from './components/navbar/TheNavigation.vue'
+import PageHeader from './components/header/PageHeader.vue'
+import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <LangugaeButtons />
-  <TheNavigation />
+  <div>
+    <LangugaeButtons />
+    <TheNavigation />
+  </div>
+
   <header>
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-    <div class="wrapper">
-      <PageHeader msg="Recipe app" />
-
-
-    </div>
+    <PageHeader msg="Recipe app" />
   </header>
 
   <RouterView />

@@ -47,3 +47,9 @@ const submitPriceRange = () => {
         <button @click="submitPriceRange">{{ t('searchPage.priceFilter.button') }}</button>
     </div>
 </template>
+
+<style scoped>
+input {
+    width: 50px;
+}
+</style>
