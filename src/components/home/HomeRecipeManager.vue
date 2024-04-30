@@ -1,9 +1,13 @@
 <script setup>
-</script>
+import { useApiBaseUrlConstructor } from '../../composables/useApiBaseUrlConstructor'
+// import { useFetch } from './../../composables/fetch'
 
+const { apiBaseUrl } = useApiBaseUrlConstructor()
+
+</script>
 
 <template>
   <div>
-    <h1>home manager comp</h1>
+    <p>Constructed Base URL: {{ apiBaseUrl }}</p>
   </div>
 </template>

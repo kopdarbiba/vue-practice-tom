@@ -1,38 +1,10 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { useApiBaseUrlConstructor } from '../../composables/useApiBaseUrlConstructor'
 
-let id = 0
-
-const hideCompleted = ref(false)
-const todos = ref([
-    { id: id++, text: 'Learn HTML', done: true },
-    { id: id++, text: 'Learn JavaScript', done: true },
-    { id: id++, text: 'Learn Vue', done: false }
-])
-
-const filteredTodos = computed(() => {
-    return hideCompleted.value
-        ? todos.value.filter((t) => !t.done)
-        : todos.value
-})
-
+const { apiBaseUrl } = useApiBaseUrlConstructor()
 
 </script>
 
 <template>
-    <ul>
-        <li v-for="todo in filteredTodos" :key="todo.id">
-            <input type="checkbox" v-model="todo.done">
-            <span>{{ todo.text }}</span>
-        </li>
-    </ul>
-    <button @click="hideCompleted = !hideCompleted">
-        {{ hideCompleted ? 'Show all' : 'Hide completed' }}
-    </button>
+    <p>Constructed Base URL: {{ apiBaseUrl }}</p>
 </template>
-
-<style>
-.done {
-    text-decoration: line-through;
-}
-</style>
