@@ -1,18 +1,18 @@
 import { ref, watchEffect, toValue } from 'vue'
 
 export function useFetch(url) {
-  const data = ref(null)
+  const fetchedData = ref(null)
   const error = ref(null)
 
   const fetchData = () => {
     // Reset state before fetching
-    data.value = null
+    fetchedData.value = null
     error.value = null
     console.log('fetchData triggered!!!!')
 
     fetch(toValue(url))
       .then((res) => res.json())
-      .then((json) => (data.value = json))
+      .then((json) => (fetchedData.value = json))
       .catch((err) => (error.value = err))
   }
 
@@ -20,6 +20,5 @@ export function useFetch(url) {
   watchEffect(() => {
     fetchData()
   })
-
-  return { data, error }
+  return { fetchedData, error }
 }
