@@ -1,10 +1,10 @@
 <script setup>
-import { useApiBaseUrlConstructor } from '../../composables/useApiBaseUrlConstructor'
+import { useApiUrlConstuctor } from '../../composables/apiUrlConstructor'
 
-const { apiBaseUrl } = useApiBaseUrlConstructor()
+const { computedUrl } = useApiUrlConstuctor()
 
 </script>
 
 <template>
-    <p>Constructed Base URL: {{ apiBaseUrl }}</p>
+    <p>Constructed Base URL: {{ computedUrl }}</p>
 </template>

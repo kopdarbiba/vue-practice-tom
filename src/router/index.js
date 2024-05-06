@@ -8,17 +8,38 @@ const routes = [
   {
     path: '/:lang?',
     component: HomeView,
-    name: 'home'
+    name: 'home',
+    meta: {
+      baseUrls: {
+        lv: 'http://localhost:8000/api/recipes/',
+        en: 'http://localhost:8000/api/recipes/?lang=en',
+        ru: 'http://localhost:8000/api/recipes/?lang=ru'
+      }
+    }
   },
   {
     path: '/:lang?/search',
     component: SearchView,
-    name: 'search'
+    name: 'search',
+    meta: {
+      baseUrls: {
+        lv: 'http://localhost:8000/api/recipes/search/',
+        en: 'http://localhost:8000/api/recipes/search/?lang=en',
+        ru: 'http://localhost:8000/api/recipes/search/?lang=ru'
+      }
+    }
   },
   {
     path: '/:lang?/about',
     name: 'about',
-    component: AboutView
+    component: AboutView,
+    meta: {
+      baseUrls: {
+        lv: 'http://localhost:8000/api/recipes/about/',
+        en: 'http://localhost:8000/api/recipes/about/?lang=en',
+        ru: 'http://localhost:8000/api/recipes/about/?lang=ru'
+      }
+    }
   }
 ]
 
