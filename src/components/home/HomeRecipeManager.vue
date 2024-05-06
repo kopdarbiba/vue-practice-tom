@@ -7,34 +7,37 @@ import { useRoute } from 'vue-router'
 
 const { locale } = useI18n()
 const route = useRoute()
+const pages = ref({})
 const newUrl = ref()
 
-const defoultUrl = computed(() => {
-  return route.meta.baseUrls[locale.value]
-})
+const currentPages = computed(() => pages.value[locale.value])
+
+const loadedPagesCount = computed(() => currentPages.value ?
+  currentPages.value.length : 0
+)
+
+const defoultUrl = computed(() => loadedPagesCount.value == 0 ?
+  route.meta.baseUrls[locale.value] : null
+)
 
 watch(defoultUrl, () => {
-  newUrl.value = null
+  newUrl.value = loadedPagesCount.value > 0 ?
+    newUrl.value = pages.value[locale.value][loadedPagesCount.value - 1]['next'] : null
 })
 
-const theUrl = computed(() => {
-  return newUrl.value ? newUrl.value : defoultUrl.value
-})
+const theUrl = computed(() => newUrl.value ?
+  newUrl.value : defoultUrl.value
+)
 
 const { fetchedPage, error } = useApiFetch(theUrl)
 
-const pages = ref({})
 watch(fetchedPage, (newPage) => {
   if (newPage) {
     if (!pages.value[locale.value]) {
-      pages.value[locale.value] = {}
+      pages.value[locale.value] = []
     }
-    pages.value[locale.value][theUrl.value] = newPage
+    pages.value[locale.value].push(newPage)
   }
-})
-
-const dataToPresent = computed(() => {
-  return pages.value[locale.value]
 })
 
 </script>
@@ -43,9 +46,6 @@ const dataToPresent = computed(() => {
   <div class="next-prev-buttons">
     <div v-if="error">Oops! Error encountered: {{ error.message }}</div>
     <div v-else-if="fetchedPage">
-      <h5>{{ fetchedPage.previous }}</h5>
-      <h5>{{ fetchedPage.next }}</h5>
-      <button v-if="fetchedPage.previous" @click="newUrl = fetchedPage.previous">Previous Page</button>
       <button v-if="fetchedPage.next" @click="newUrl = fetchedPage.next">Next Page</button>
     </div>
     <div v-else>
@@ -55,10 +55,10 @@ const dataToPresent = computed(() => {
 
   <div>
     <div v-if="error">Oops! Error encountered: {{ error.message }}</div>
-    <div v-else-if="dataToPresent">
-      <div v-for="(page, key) in dataToPresent" :key="key">
+    <div v-else-if="currentPages">
+      <div v-for="(page, key) in currentPages" :key="key">
         <div v-for="(recipe, key) in page.results" :key="key">
-          <span>{{ recipe.id }} : {{ recipe.title }}</span>
+          <span>{{ recipe.id }}*** {{ recipe.title }} --- {{ recipe.url }}</span>
         </div>
       </div>
     </div>
