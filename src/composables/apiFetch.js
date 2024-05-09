@@ -16,8 +16,7 @@ export function useApiFetch(url) {
 
   // Watch for changes in url and re-fetch data
   watchEffect(() => {
-    fetchData()
-    // console.log(`__url.value__<1>: ${url.value}`)
+    url.value ? fetchData() : console.log('url.value is null')
   })
 
   return { fetchedPage, error }
