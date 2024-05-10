@@ -4,13 +4,13 @@ import { useGetUrl } from '@/composables/getUrl'
 import { watch, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-import { useLocalStorage, useInfiniteScroll } from '@vueuse/core'
+import { useInfiniteScroll, useSessionStorage } from '@vueuse/core'
 
 const { locale } = useI18n()
 const el = ref(null)
 
 
-const homeApiDataStorage = useLocalStorage(
+const homeApiDataStorage = useSessionStorage(
   'home-api-data-storage',
   {}
 )
