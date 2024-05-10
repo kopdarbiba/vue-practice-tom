@@ -1,7 +1,8 @@
 <script setup>
 import { useApiFetch } from '@/composables/apiFetch'
 import { useGetUrl } from '@/composables/getUrl'
-import { watch, ref } from 'vue'
+import { useFetchedDataManager } from '@/composables/fetchedDataManager'
+import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 import { useInfiniteScroll, useSessionStorage } from '@vueuse/core'
@@ -17,19 +18,7 @@ const homeApiDataStorage = useSessionStorage(
 
 const { url, newUrlCallback } = useGetUrl(homeApiDataStorage)
 const { fetchedPage, error } = useApiFetch(url)
-
-watch(fetchedPage, (newPage) => {
-  if (newPage) {
-    createsEmptyObjArray()
-    homeApiDataStorage.value[locale.value].push(newPage)
-  }
-})
-
-function createsEmptyObjArray() {
-  if (!homeApiDataStorage.value[locale.value]) {
-    homeApiDataStorage.value[locale.value] = []
-  }
-}
+useFetchedDataManager(fetchedPage, homeApiDataStorage)
 
 
 useInfiniteScroll(
