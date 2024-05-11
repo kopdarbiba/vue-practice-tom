@@ -8,10 +8,13 @@ export function useGetUrl(apiDataStorage) {
 
   const url = ref()
 
-  const nextUrl = computed(() => apiDataStorage.value[locale.value][length.value - 1].next)
-
   const length = computed(() => {
     return apiDataStorage.value[locale.value] ? apiDataStorage.value[locale.value].length : 0
+  })
+
+  const nextUrl = computed(() => {
+    const data = apiDataStorage.value[locale.value]
+    return data && data.length > 0 ? data[length.value - 1].next : null
   })
 
   const newUrlCallback = () => {
