@@ -29,7 +29,7 @@ const submitLanguage = () => {
 </script>
 
 <template>
-    <div>
+    <div id="lang-btn">
         <select v-model="locale" @change="submitLanguage">
             <option v-for="locale in availableLocales" :key="`locale-${locale}`" :value="locale">{{ locale }}
             </option>
@@ -37,3 +37,11 @@ const submitLanguage = () => {
     </div>
 
 </template>
+
+<style scoped>
+#lang-btn {
+    width: 100%;
+    height: auto;
+    text-align: right;
+}
+</style>

@@ -1,40 +1,21 @@
 <script setup>
-defineProps({
-  msg: {
-    type: String,
-    required: true
-  }
-})
+import LangugaeButtons from '@/components/header/i18n/LanguageButtons.vue'
+import TheNavigation from '@/components/header/navbar/TheNavigation.vue'
+import TheLogo from '@/components/header/logo/TheLogo.vue'
 </script>
 
 <template>
-  <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
+  <div id="header">
+    <TheLogo />
+    <TheNavigation />
+    <LangugaeButtons />
   </div>
 </template>
 
 <style scoped>
-h1 {
-  font-weight: 500;
-  font-size: 2.6rem;
-  position: relative;
-  top: -10px;
-}
-
-h3 {
-  font-size: 1.2rem;
-}
-
-.greetings h1,
-.greetings h3 {
-  text-align: center;
-}
-
-@media (min-width: 1024px) {
-
-  .greetings h1,
-  .greetings h3 {
-    text-align: left;
-  }
+#header {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 10px;
 }
 </style>

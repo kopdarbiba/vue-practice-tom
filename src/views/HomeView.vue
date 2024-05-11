@@ -1,9 +1,7 @@
 <script setup>
-import HomeRecipeManager from '../components/home/HomeRecipeManager.vue'
+import HomeRecipeManager from '@/components/home/HomeRecipeManager.vue'
 </script>
 
 <template>
-  <main>
-    <HomeRecipeManager />
-  </main>
+  <HomeRecipeManager />
 </template>

@@ -1,9 +1,7 @@
 <script setup>
-import SearchPageManager from '../components/search/SearchPageManager.vue'
+import SearchPageManager from '@/components/search/SearchPageManager.vue'
 </script>
 
 <template>
-  <main>
-    <SearchPageManager />
-  </main>
+  <SearchPageManager />
 </template>
