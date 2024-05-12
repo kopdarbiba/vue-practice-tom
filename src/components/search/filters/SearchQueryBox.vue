@@ -28,11 +28,13 @@ const submitSearch = () => {
 </script>
 
 <template>
+
     <div class="search-recipes">
         <input @keyup.enter="submitSearch" v-model="searchBoxInput"
-            :placeholder="t('searchPage.searchQuery.search_box')">
+            :placeholder="t('searchPage.searchQuery.search_box')" id="search-input">
         <button @click="submitSearch">{{ t('searchPage.searchQuery.button') }}</button>
     </div>
+
 </template>
 
 <style scoped>

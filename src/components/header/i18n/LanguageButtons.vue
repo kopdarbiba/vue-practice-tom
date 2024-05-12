@@ -18,7 +18,6 @@ watch(() => route.params.lang, (newLang) => {
     }
 });
 
-
 const submitLanguage = () => {
     router.push({
         name: route.name,
@@ -30,12 +29,10 @@ const submitLanguage = () => {
 
 <template>
     <div id="lang-btn">
-        <select v-model="locale" @change="submitLanguage">
-            <option v-for="locale in availableLocales" :key="`locale-${locale}`" :value="locale">{{ locale }}
-            </option>
+        <select v-model="locale" @change="submitLanguage" id="language-select">
+            <option v-for="locale in availableLocales" :key="`locale-${locale}`" :value="locale">{{ locale }}</option>
         </select>
     </div>
-
 </template>
 
 <style scoped>

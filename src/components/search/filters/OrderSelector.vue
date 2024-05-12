@@ -30,12 +30,14 @@ const submitOrdering = () => {
 </script>
 
 <template>
+
     <div class="order-recipes">
-        <select @change="submitOrdering" v-model="selectedOrder">
+        <select @change="submitOrdering" v-model="selectedOrder" id="order-select">
             <option v-for="(option, key) in messages[locale].searchPage.orderSelector.options" :key="option.id"
                 :value="key">
                 {{ option }}
             </option>
         </select>
     </div>
+
 </template>

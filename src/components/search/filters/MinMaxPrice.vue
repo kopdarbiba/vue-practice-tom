@@ -37,15 +37,17 @@ const submitPriceRange = () => {
 </script>
 
 <template>
+
     <div class="filter-recipes-by-price">
         <input @keyup.enter="submitPriceRange" type="number" v-model="priceMin"
-            :placeholder="t('searchPage.priceFilter.minField')" />
+            :placeholder="t('searchPage.priceFilter.minField')" id="min-price-input" />
 
         <input @keyup.enter="submitPriceRange" type="number" v-model="priceMax"
-            :placeholder="t('searchPage.priceFilter.maxField')" />
+            :placeholder="t('searchPage.priceFilter.maxField')" id="max-price-input" />
 
         <button @click="submitPriceRange">{{ t('searchPage.priceFilter.button') }}</button>
     </div>
+
 </template>
 
 <style scoped>

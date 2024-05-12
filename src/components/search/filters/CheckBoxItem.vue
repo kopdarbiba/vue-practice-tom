@@ -51,13 +51,13 @@ const buttonText = computed(() => showLess.value ? t('searchPage.checkBox.seeMor
 
 
 <template>
+
     <h1>{{ block.title[selectedLang] }}</h1>
-    <li v-for="(value, key) in filteredMeals" :key="key" :value="value">
-        <input @change="submitSelected" type="checkbox" :value=value.slug v-model="itemArray">
-        <label>{{ value[selectedLang] }}</label>
+    <li v-for="(value, key) in filteredMeals" :key="key">
+        <input @change="submitSelected" type="checkbox" :value=value.slug v-model="itemArray" :id=value.slug>
+        {{ value[selectedLang] }}
     </li>
     <span @click="doToggle" class="clickable">{{ buttonText }}</span>
-
 
 </template>
 

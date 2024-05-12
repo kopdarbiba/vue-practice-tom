@@ -5,11 +5,13 @@ import TheLogo from '@/components/header/logo/TheLogo.vue'
 </script>
 
 <template>
-  <div id="header">
-    <TheLogo />
-    <TheNavigation />
-    <LangugaeButtons />
-  </div>
+  <header>
+    <div id="header">
+      <TheLogo />
+      <TheNavigation />
+      <LangugaeButtons />
+    </div>
+  </header>
 </template>
 
 <style scoped>
