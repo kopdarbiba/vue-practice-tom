@@ -37,7 +37,9 @@ useInfiniteScroll(
         <div>
             <div v-if="error">Oops! Error encountered: {{ error.message }}</div>
             <div v-else-if="searchApiDataStorage">
-                <div v-for="(page, id ) in searchApiDataStorage[locale]" :key="id">
+                <!-- TODO: id value needed in array entry, example:
+                <div v-for="page in searchApiDataStorage[locale]" :key="page.id"> -->
+                <div v-for="(page, id) in searchApiDataStorage[locale]" :key="id">
                     <hr>
                     <h2> page: {{ id + 1 }}</h2>
                     <div v-for="recipe in page.results" :key="recipe.id">
