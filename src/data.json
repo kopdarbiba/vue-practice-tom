@@ -1,5 +1,5 @@
 {
-  "meal": {
+  "meals": {
     "title": { "lv": "Maltīte", "en": "Meals", "ru": "Еда" },
     "data": [
       {
@@ -130,7 +130,7 @@
       }
     ]
   },
-  "cuisine": {
+  "cuisines": {
     "title": { "lv": "Virtuve", "en": "Cuisine", "ru": "Кухня" },
     "data": [
       {
@@ -296,7 +296,7 @@
       }
     ]
   },
-  "occasion": {
+  "occasions": {
     "title": { "lv": "Notikums", "en": "Occasion", "ru": "Событие" },
     "data": [
       {
@@ -518,7 +518,7 @@
       }
     ]
   },
-  "unit": {
+  "units": {
     "title": { "lv": "Mērvienība", "en": "Unit", "ru": "Единица измерения" },
     "data": [
       {
@@ -670,7 +670,7 @@
       }
     ]
   },
-  "dietary_preference": {
+  "dietary_preferences": {
     "title": {
       "lv": "Dietāras preferences",
       "en": "Dietary Preferences",
@@ -812,7 +812,7 @@
       }
     ]
   },
-  "equipment": {
+  "equipments": {
     "title": { "lv": "Iekārtas", "en": "Equipment", "ru": "Оборудование" },
     "data": [
       {
@@ -915,7 +915,7 @@
       }
     ]
   },
-  "allergen": {
+  "allergens": {
     "title": { "lv": "Alerģēns", "en": "Allergen", "ru": "Аллерген" },
     "data": [
       {
@@ -997,7 +997,7 @@
       }
     ]
   },
-  "cooking_method": {
+  "cooking_methods": {
     "title": { "lv": "Gatavošanas metode", "en": "Cooking Method", "ru": "Метод приготовления" },
     "data": [
       {

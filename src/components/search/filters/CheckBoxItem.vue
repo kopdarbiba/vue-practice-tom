@@ -1,48 +1,24 @@
 <script setup>
 import { ref, computed } from 'vue'
-import { useRouter, useRoute } from 'vue-router'
-import { useI18n } from 'vue-i18n';
+import { useI18n } from 'vue-i18n'
 
-const { t } = useI18n();
-const router = useRouter()
-const route = useRoute()
-const { block, itemKey } = defineProps(['block', 'itemKey'])
+import { useSubmitForm } from '@/composables/submitForm'
 
-const itemArray = ref([])
+const { t, locale } = useI18n()
 
-if (route.query[itemKey]) {
-    itemArray.value = !Array.isArray(route.query[itemKey]) ? [route.query[itemKey]] : route.query[itemKey]
-}
-
-const newQuery = computed(() => {
-    return { [itemKey]: itemArray.value }
-}
-)
-
-const submitSelected = () => {
-    router.push({
-        name: route.name,
-        params: { lang: route.params.lang },
-        query: {
-            ...route.query,
-            ...newQuery.value
-        },
-    });
-}
-
-const selectedLang = computed(() => {
-    return route.params.lang ? route.params.lang : 'lv'
-})
+const { section, sectionKey } = defineProps(['section', 'sectionKey'])
+const formValues = ref([])
+const { submitFilter } = useSubmitForm(sectionKey, formValues)
 
 const showLess = ref(true)
 const doToggle = () => {
     showLess.value = !showLess.value
 }
 
-const filteredMeals = computed(() => {
+const filteredSection = computed(() => {
     return showLess.value
-        ? block.data.filter((t) => t.favorite)
-        : block.data
+        ? section.data.filter((t) => t.favorite)
+        : section.data
 })
 
 const buttonText = computed(() => showLess.value ? t('searchPage.checkBox.seeMore') : t('searchPage.checkBox.seeLess'))
@@ -52,14 +28,15 @@ const buttonText = computed(() => showLess.value ? t('searchPage.checkBox.seeMor
 
 <template>
 
-    <h1>{{ block.title[selectedLang] }}</h1>
-    <li v-for="(value, key) in filteredMeals" :key="key">
-        <input @change="submitSelected" type="checkbox" :value=value.slug v-model="itemArray" :id=value.slug>
-        {{ value[selectedLang] }}
+    <h1>{{ section.title[locale] }}</h1>
+    <li v-for="(value, key) in filteredSection" :key="key">
+        <input @change="submitFilter" type="checkbox" :value=value.slug v-model="formValues" :id=value.slug>
+        {{ value[locale] }}
     </li>
     <span @click="doToggle" class="clickable">{{ buttonText }}</span>
 
 </template>
+
 
 <style scoped>
 .clickable {

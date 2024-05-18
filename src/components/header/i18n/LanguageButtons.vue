@@ -16,7 +16,7 @@ watch(() => route.params.lang, (newLang) => {
     } else {
         locale.value = 'lv'
     }
-});
+})
 
 const submitLanguage = () => {
     router.push({
@@ -25,7 +25,9 @@ const submitLanguage = () => {
         query: route.query
     })
 }
+
 </script>
+
 
 <template>
     <div id="lang-btn">
@@ -34,6 +36,7 @@ const submitLanguage = () => {
         </select>
     </div>
 </template>
+
 
 <style scoped>
 #lang-btn {

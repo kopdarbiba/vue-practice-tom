@@ -1,6 +1,7 @@
 <script setup>
-import PageHeader from '@/components/header/PageHeader.vue'
 import { RouterView } from 'vue-router'
+
+import PageHeader from '@/components/header/PageHeader.vue'
 </script>
 
 <template>

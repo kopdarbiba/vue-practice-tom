@@ -1,41 +1,27 @@
 <script setup>
-import { useRouter, useRoute } from 'vue-router'
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-const router = useRouter()
-const route = useRoute()
+import { useSubmitForm } from '@/composables/submitForm'
+
+
 const { t } = useI18n()
-const searchBoxInput = ref(route.query.q || '')
+const formValues = ref()
+const { submitFilter } = useSubmitForm('q', formValues)
 
-const computeNewQuery = computed(() => {
-    if (searchBoxInput.value) {
-        return { ...route.query, "q": searchBoxInput.value }
-    } else {
-        const routeQuery = { ...route.query }
-        delete routeQuery.q
-        return routeQuery
-    }
-})
-
-const submitSearch = () => {
-    router.push({
-        name: route.name,
-        params: { lang: route.params.lang },
-        query: computeNewQuery.value
-    })
-}
 </script>
+
 
 <template>
 
     <div class="search-recipes">
-        <input @keyup.enter="submitSearch" v-model="searchBoxInput"
-            :placeholder="t('searchPage.searchQuery.search_box')" id="search-input">
-        <button @click="submitSearch">{{ t('searchPage.searchQuery.button') }}</button>
+        <input @keyup.enter="submitFilter" v-model="formValues" :placeholder="t('searchPage.searchQuery.search_box')"
+            id="search-input">
+        <!-- <button @click="submitFilter">{{ t('searchPage.searchQuery.button') }}</button> -->
     </div>
 
 </template>
+
 
 <style scoped>
 input {

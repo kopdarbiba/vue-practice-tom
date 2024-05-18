@@ -1,9 +1,10 @@
 <script setup>
-import { useI18n } from 'vue-i18n';
+import { useI18n } from 'vue-i18n'
 
-const { t } = useI18n();
+const { t } = useI18n()
 
 </script>
+
 
 <template>
     <nav>
@@ -12,7 +13,6 @@ const { t } = useI18n();
         <RouterLink :to="{ name: 'about', params: { lang: $route.params.lang } }">{{ t('navBar.about') }}</RouterLink>
     </nav>
 </template>
-
 
 
 <style scoped>

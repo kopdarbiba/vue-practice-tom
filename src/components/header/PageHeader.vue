@@ -4,6 +4,7 @@ import TheNavigation from '@/components/header/navbar/TheNavigation.vue'
 import TheLogo from '@/components/header/logo/TheLogo.vue'
 </script>
 
+
 <template>
   <header>
     <div id="header">
@@ -13,6 +14,7 @@ import TheLogo from '@/components/header/logo/TheLogo.vue'
     </div>
   </header>
 </template>
+
 
 <style scoped>
 #header {
