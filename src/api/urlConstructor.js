@@ -1,9 +1,9 @@
-import { computed } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
 export function useNewUrlConstructor() {
   const route = useRoute()
-  const newUrl = computed(() => newUrlConstructor(route))
+  const newUrl = computed(() => constructNewUrl(route))
 
   function getBaseUrl(name) {
     const base = 'http://localhost:8000/api/recipes/'
@@ -28,7 +28,7 @@ export function useNewUrlConstructor() {
     return lang ? `lang=${lang}` : ''
   }
 
-  function newUrlConstructor(route) {
+  function constructNewUrl(route) {
     const baseUrl = getBaseUrl(route.name)
     const queryString = getQueryString(route.query)
     const language = addLanguage(route.params.lang)
@@ -44,5 +44,27 @@ export function useNewUrlConstructor() {
       return baseUrl
     }
   }
+
   return { newUrl }
+}
+
+export function useNextUrlConstructor(storage) {
+  const nextUrl = ref()
+
+  const updateNextUrl = () => {
+    nextUrl.value = storage.data.value[storage.data.value.length - 1].next
+  }
+
+  return { nextUrl, updateNextUrl }
+}
+
+export function useUrlWatch(newUrl, nextUrl, storage) {
+  // when language or filter query is changed
+  watch(
+    () => newUrl.value,
+    () => {
+      nextUrl.value = undefined
+      storage.data.value = []
+    }
+  )
 }

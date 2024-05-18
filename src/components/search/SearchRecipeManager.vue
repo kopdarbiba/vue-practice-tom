@@ -1,33 +1,21 @@
 <script setup>
-import { ref, watch } from 'vue'
-import { useSessionStorage } from '@vueuse/core'
-
-import { useNewUrlConstructor } from '@/api/urlConstructor'
+import { useSessionStorageManager } from '@/api/storageManager'
+import { useNewUrlConstructor, useNextUrlConstructor, useUrlWatch } from '@/api/urlConstructor'
 import { useApiFetch } from '@/api/apiFetch'
+import { ref } from 'vue';
 
-const searchApiDataStorage = useSessionStorage('search-api-data-storage', [])
-const nextUrl = ref()
-const updateNextUrl = () => {
-    nextUrl.value = searchApiDataStorage.value[searchApiDataStorage.value.length - 1].next
-}
-
+// Initialize storage manager
+const storage = useSessionStorageManager('search-page-recipes')
+const data = ref(storage.data)
+// Get URL constructors
 const { newUrl } = useNewUrlConstructor()
-// reset on language or filter query changes
-watch(
-    () => newUrl.value,
-    () => {
-        nextUrl.value = undefined
-        searchApiDataStorage.value = []
-    }
-)
+const { nextUrl, updateNextUrl } = useNextUrlConstructor(storage)
 
-const urls = ref({
-    new: newUrl,
-    next: nextUrl
-})
+// Set up watchers
+useUrlWatch(newUrl, nextUrl, storage)
 
-const { error } = useApiFetch(urls, searchApiDataStorage)
-
+// Fetch API data
+const { error } = useApiFetch(newUrl, nextUrl, storage)
 </script>
 
 
@@ -38,10 +26,10 @@ const { error } = useApiFetch(urls, searchApiDataStorage)
 
         <div>
             <div v-if="error">Oops! Error encountered: {{ error.message }}</div>
-            <div v-else-if="searchApiDataStorage">
+            <div v-else-if="data">
                 <!-- TODO: id value needed in array entry, example:
                 <div v-for="page in searchApiDataStorage[locale]" :key="page.id"> -->
-                <div v-for="(page, id) in searchApiDataStorage" :key="id">
+                <div v-for="(page, id) in data" :key="id">
                     <hr>
                     <h2> page: {{ id + 1 }}</h2>
                     <div v-for="recipe in page.results" :key="recipe.id">

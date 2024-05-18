@@ -4,7 +4,7 @@ import SearchQueryBox from '@/components/search/filters/SearchQueryBox.vue'
 import MinPrice from '@/components/search/filters/MinPrice.vue'
 import MaxPrice from '@/components/search/filters/MaxPrice.vue'
 import CheckBoxeCore from '@/components/search/CheckBoxeCore.vue'
-import RecipeManager from '@/components/search/RecipeManager.vue'
+import RecipeManager from '@/components/search/SearchRecipeManager.vue'
 </script>
 
 

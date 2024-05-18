@@ -1,33 +1,21 @@
 <script setup>
-import { ref, watch } from 'vue'
-import { useSessionStorage } from '@vueuse/core'
-
-import { useNewUrlConstructor } from '@/api/urlConstructor'
+import { useSessionStorageManager } from '@/api/storageManager'
+import { useNewUrlConstructor, useNextUrlConstructor, useUrlWatch } from '@/api/urlConstructor'
 import { useApiFetch } from '@/api/apiFetch'
+import { ref } from 'vue';
 
-const homeApiDataStorage = useSessionStorage('home-api-data-storage', [])
-const nextUrl = ref()
-const updateNextUrl = () => {
-  nextUrl.value = homeApiDataStorage.value[homeApiDataStorage.value.length - 1].next
-}
-
+// Initialize storage manager
+const storage = useSessionStorageManager('home-page-recipes')
+const data = ref(storage.data)
+// Get URL constructors
 const { newUrl } = useNewUrlConstructor()
-// reset on language changes
-watch(
-  () => newUrl.value,
-  () => {
-    nextUrl.value = undefined
-    homeApiDataStorage.value = []
-  }
-)
+const { nextUrl, updateNextUrl } = useNextUrlConstructor(storage)
 
-const urls = ref({
-  new: newUrl,
-  next: nextUrl
-})
+// Set up watchers
+useUrlWatch(newUrl, nextUrl, storage)
 
-const { error } = useApiFetch(urls, homeApiDataStorage)
-
+// Fetch API data
+const { error } = useApiFetch(newUrl, nextUrl, storage)
 </script>
 
 
@@ -42,12 +30,12 @@ const { error } = useApiFetch(urls, homeApiDataStorage)
     <div>
       <button @click="updateNextUrl()">Next Page</button>
       <div v-if="error">Oops! Error encountered: {{ error.message }}</div>
-      <div v-else-if="homeApiDataStorage">
+      <div v-else-if="data">
         <!-- TODO: id value needed in array entry, example:
         <div v-for="page in homeApiDataStorage[locale]" :key="page.id"> -->
-        <div v-for="(page, id ) in homeApiDataStorage" :key="id">
+        <div v-for="(page, pageIndex ) in data" :key="pageIndex">
           <hr>
-          <h2> page: {{ id + 1 }}</h2>
+          <h2> page: {{ pageIndex + 1 }}</h2>
           <div v-for="recipe in page.results" :key="recipe.id">
             <h1> id: {{ recipe.id }}</h1>
             <h1> {{ recipe.title }}</h1>
