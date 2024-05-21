@@ -1,8 +1,8 @@
 import { createWebHistory, createRouter } from 'vue-router'
 
-const HomeView = () => import(/* webpackChunkName: 'home'*/ '../views/HomeView.vue')
-const SearchView = () => import(/* webpackChunkName: 'search'*/ '../views/SearchView.vue')
-const AboutView = () => import(/* webpackChunkName: 'about'*/ '../views/AboutView.vue')
+const HomeView = () => import(/* webpackChunkName: 'home'*/ '@/views/HomeView.vue')
+const SearchView = () => import(/* webpackChunkName: 'search'*/ '@/views/SearchView.vue')
+const AboutView = () => import(/* webpackChunkName: 'about'*/ '@/views/AboutView.vue')
 
 const routes = [
   {
