@@ -2,13 +2,15 @@
 import { useSessionStorageManager } from '@/api/storageManager'
 import { useNewUrlConstructor, useNextUrlConstructor, useUrlWatch } from '@/api/urlConstructor'
 import { useApiFetch } from '@/api/apiFetch'
-import { ref } from 'vue';
+import { ref } from 'vue'
+import { useRoute } from 'vue-router'
+
 
 // Initialize storage manager
 const storage = useSessionStorageManager('home-page-recipes')
 const data = ref(storage.data)
 // Get URL constructors
-const { newUrl } = useNewUrlConstructor()
+const { newUrl } = useNewUrlConstructor(useRoute())
 const { nextUrl, updateNextUrl } = useNextUrlConstructor(storage)
 
 // Set up watchers

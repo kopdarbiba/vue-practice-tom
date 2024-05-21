@@ -9,8 +9,8 @@ export function useSessionStorageManager(name) {
   return {
     data,
     isEmptyBool,
-    add(item) {
-      data.value.push(item)
+    add(fetchedPage) {
+      data.value.push(fetchedPage)
     }
   }
 }

@@ -2,13 +2,16 @@
 import { useSessionStorageManager } from '@/api/storageManager'
 import { useNewUrlConstructor, useNextUrlConstructor, useUrlWatch } from '@/api/urlConstructor'
 import { useApiFetch } from '@/api/apiFetch'
-import { ref } from 'vue';
+import { ref } from 'vue'
+import { useRoute } from 'vue-router'
 
 // Initialize storage manager
 const storage = useSessionStorageManager('search-page-recipes')
+// only for use in template( iterating over storage.data wont work )
 const data = ref(storage.data)
-// Get URL constructors
-const { newUrl } = useNewUrlConstructor()
+
+// Backend endpint URL constructors for fetching
+const { newUrl } = useNewUrlConstructor(useRoute())
 const { nextUrl, updateNextUrl } = useNextUrlConstructor(storage)
 
 // Set up watchers
@@ -17,7 +20,6 @@ useUrlWatch(newUrl, nextUrl, storage)
 // Fetch API data
 const { error } = useApiFetch(newUrl, nextUrl, storage)
 </script>
-
 
 <template>
     <button @click="updateNextUrl()">Next Page</button>

@@ -4,9 +4,7 @@ import { useRouter, useRoute } from 'vue-router'
 export function useSubmitForm(sectionKey, formValues) {
   const router = useRouter()
   const route = useRoute()
-
-  updateFormValuesFromRoute(route, sectionKey, formValues)
-
+  // Compute filter form values to be sent to route
   const computedNewQuery = computed(() => {
     const newQuery = { ...route.query }
     if (formValues.value && (formValues.value.length > 0 || typeof formValues.value === 'number')) {
@@ -17,6 +15,7 @@ export function useSubmitForm(sectionKey, formValues) {
     return newQuery
   })
 
+  // Submit computed filter form values to route
   const submitFilter = () => {
     router.push({
       name: route.name,
@@ -24,6 +23,8 @@ export function useSubmitForm(sectionKey, formValues) {
       query: computedNewQuery.value
     })
   }
+
+  updateFormValuesFromRoute(route, sectionKey, formValues)
 
   return { submitFilter }
 }
