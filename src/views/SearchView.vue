@@ -4,7 +4,7 @@ import { useNewUrlConstructor, useNextUrlConstructor, useUrlWatch } from '@/api/
 import { useApiFetch } from '@/api/apiFetch'
 import { ref } from 'vue'
 import { useRoute } from 'vue-router'
-import FiltersManager from '@/components/search/FiltersManager.vue'
+import FormManager from '@/components/search/FormManager.vue'
 
 // Initialize storage manager
 const storage = useSessionStorageManager('searched-recipes')
@@ -25,7 +25,7 @@ const { error } = useApiFetch(newUrl, nextUrl, storage)
 
 <template>
   <div id="search-page">
-    <FiltersManager />
+    <FormManager />
     <div id="search-page-list-recipes">
       <button @click="updateNextUrl()">Next Page</button>
       <div>
