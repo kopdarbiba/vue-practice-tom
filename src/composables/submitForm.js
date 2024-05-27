@@ -1,10 +1,10 @@
 import { computed } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 
-export function useSubmitForm(sectionKey, formValues) {
+export function useSubmitForm(formValues) {
   const router = useRouter()
   const route = useRoute()
-  // Compute filter form values to be sent to route
+  // Update route query with new values
   const computedNewQuery = computed(() => {
     const newQuery = { ...route.query }
     if (formValues.value && (formValues.value.length > 0 || typeof formValues.value === 'number')) {
@@ -15,8 +15,11 @@ export function useSubmitForm(sectionKey, formValues) {
     return newQuery
   })
 
-  // Submit computed filter form values to route
-  const submitFilter = () => {
+  // execute route.push with new query
+  const submitForm = (n) => {
+    console.log('###############', n)
+    // console.log('submitForm!!!!!!!!!!!!!!!!!!!!!!!!!', computedNewQuery.value)
+    console.log('WWWWWWWWWw', formValues.value)
     router.push({
       name: route.name,
       params: { lang: route.params.lang },
@@ -24,9 +27,9 @@ export function useSubmitForm(sectionKey, formValues) {
     })
   }
 
-  updateFormValuesFromRoute(route, sectionKey, formValues)
+  // updateFormValuesFromRoute(route, sectionKey, formValues)
 
-  return { submitFilter }
+  return { submitForm }
 }
 
 // Populate formValues with values from route on page refresh

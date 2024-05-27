@@ -1,18 +1,24 @@
 <script setup>
-const searchQuery = defineModel('searchQuery')
 
 defineProps({
     translatedSearchBox: {
         type: String,
         required: true
+    },
+    formValuesStorage: {
+        type: Object,
+        required: true
     }
 })
+
+const emit = defineEmits(['collectSearchQuery'])
 
 </script>
 
 
 <template>
-    <input v-model="searchQuery" :placeholder="translatedSearchBox" id="search-input">
+    <input :value="formValuesStorage.q" @change="emit('collectSearchQuery', 'q', $event.target.value)"
+        :placeholder="translatedSearchBox" id="search-input">
 </template>
 
 

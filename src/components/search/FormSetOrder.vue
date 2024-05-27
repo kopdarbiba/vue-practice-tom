@@ -1,19 +1,25 @@
 <script setup>
-const order = defineModel({ default: '' })
 
 defineProps({
     translatedOptions: {
         type: Object,
         required: true
+    },
+    formValuesStorage: {
+        type: Object,
+        required: true
     }
 })
+const emit = defineEmits(['collectOrderingData'])
+
 
 </script>
 
 
 <template>
 
-    <select v-model="order" id="order-select">
+    <select :value="formValuesStorage.order" @change="emit('collectOrderingData', 'order', $event.target.value)"
+        id="order-select">
         <option v-for="(option, key) in translatedOptions" :key="option.id" :value="key">
             {{ option }}
         </option>
