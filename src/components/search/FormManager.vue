@@ -5,6 +5,7 @@ import SetOrder from '@/components/search/FormSetOrder.vue'
 import FormSearchQuery from '@/components/search/FormSearchQuery.vue'
 import FormPriceRange from '@/components/search/FormPriceRange.vue'
 import FormCheckBoxSection from '@/components/search/FormCheckBoxSection.vue'
+import { useQueryStringBuilder } from '@/composables/queryStringBuilder'
 
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -12,9 +13,9 @@ const { messages, locale } = useI18n()
 
 import { useSessionStorage } from '@vueuse/core'
 const formValuesStorage = useSessionStorage('form-data-values', {})
+
+
 const tempCollectedData = ref({})
-
-
 const submitForm = () => {
     for (const k in tempCollectedData.value) {
         const v = tempCollectedData.value[k]
@@ -25,7 +26,14 @@ const submitForm = () => {
         }
     }
     tempCollectedData.value = {}
-};
+    updateQueryString(formValuesStorage.value)
+
+}
+
+const queryStringStorage = useSessionStorage('query-string', [])
+function updateQueryString(params) {
+    queryStringStorage.value = useQueryStringBuilder(params)
+}
 
 function checkboxDataManager(k, v) {
     tempCollectedData.value[k] = v
@@ -37,7 +45,6 @@ function priceRangeManager(k, v) {
 function searchFieldManager(k, v) {
     tempCollectedData.value[k] = v
 }
-
 function orderSelectorManager(k, v) {
     tempCollectedData.value[k] = v
     submitForm()
