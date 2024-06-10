@@ -1,29 +1,41 @@
 <script setup>
-const buttonText = computed(() => showLess.value ? t('searchPage.checkBox.seeMore') : t('searchPage.checkBox.seeLess'))
-const doToggle = () => {
-    showLess.value = !showLess.value
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
+
+const isExpandedState = defineModel()
+
+const buttonText = computed(() => (isExpandedState.value ? t('searchPage.checkBox.seeLess') : t('searchPage.checkBox.seeMore')))
+
+function doToggle() {
+    isExpandedState.value ? (isExpandedState.value = false) : (isExpandedState.value = true)
 }
 
-// const showLess = ref(true)
-
-// const filteredSection = computed(() => {
-//     return showLess.value
-//         ? section.data.filter((t) => t.favorite)
-//         : section.data
-// })
 </script>
 
 <template>
-    <span @click="doToggle" class="clickable">{{ buttonText }}</span>
-
+    <div>
+        <span @click="doToggle" class="clickable">{{ buttonText }}</span>
+    </div>
 </template>
+
+
 
 <style scoped>
 .clickable {
     cursor: pointer;
+    cursor: pointer;
+    color: rgb(226, 190, 14);
+
+    text-decoration: underline;
 }
 
 .clickable:hover {
-    color: blue;
+    color: rgb(25, 0, 255);
+}
+
+
+.hidden-checkbox {
+    display: none;
 }
 </style>
