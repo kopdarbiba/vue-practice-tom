@@ -1,17 +1,17 @@
 <script setup>
+import { onMounted, ref } from 'vue'
+import { useRoute } from 'vue-router'
 import { useSessionStorageManager } from '@/api/storageManager'
 import { useNewUrlConstructor, useNextUrlConstructor, useUrlWatch } from '@/api/urlConstructor'
 import { useApiFetch } from '@/api/apiFetch'
-import { ref } from 'vue'
-import { useRoute } from 'vue-router'
 import FormManager from '@/components/search/FormManager.vue'
 
 // Initialize storage manager
 const storage = useSessionStorageManager('searched-recipes')
-// only for use in template( iterating over storage.data wont work )
+// only for use in template (iterating over storage.data won't work)
 const data = ref(storage.data)
 
-// Backend endpint URL constructors for fetching
+// Backend endpoint URL constructors for fetching
 const { newUrl } = useNewUrlConstructor(useRoute())
 const { nextUrl, updateNextUrl } = useNextUrlConstructor(storage)
 
@@ -21,18 +21,31 @@ useUrlWatch(newUrl, nextUrl, storage)
 // Fetch API data
 const { error } = useApiFetch(newUrl, nextUrl, storage)
 
+// Infinite scroll implementation
+const loadMore = () => {
+  updateNextUrl()
+}
+
+const handleScroll = () => {
+  const bottomOfWindow = window.innerHeight + window.scrollY >= document.documentElement.offsetHeight - 10
+  if (bottomOfWindow) {
+    loadMore()
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
 </script>
 
 <template>
   <div id="search-page">
     <FormManager />
     <div id="search-page-list-recipes">
-      <button @click="updateNextUrl()">Next Page</button>
       <div>
         <div v-if="error">Oops! Error encountered: {{ error.message }}</div>
         <div v-else-if="data">
-          <!-- TODO: id value needed in array entry, example:
-            <div v-for="page in searchApiDataStorage[locale]" :key="page.id"> -->
           <div v-for="(page, id) in data" :key="id">
             <hr>
             <h2> page: {{ id + 1 }}</h2>
@@ -54,11 +67,9 @@ const { error } = useApiFetch(newUrl, nextUrl, storage)
   </div>
 </template>
 
-
 <style scoped>
 #search-page {
   display: grid;
   grid-template-columns: 1fr 3fr;
-
 }
 </style>
