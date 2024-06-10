@@ -1,10 +1,12 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { useSessionStorageManager } from '@/api/storageManager'
 import { useNewUrlConstructor, useNextUrlConstructor, useUrlWatch } from '@/api/urlConstructor'
 import { useApiFetch } from '@/api/apiFetch'
 import FormManager from '@/components/search/FormManager.vue'
+import { useInfiniteScroll } from '@/composables/useInfiniteScroll'
+
 
 // Initialize storage manager
 const storage = useSessionStorageManager('searched-recipes')
@@ -22,21 +24,7 @@ useUrlWatch(newUrl, nextUrl, storage)
 const { error } = useApiFetch(newUrl, nextUrl, storage)
 
 // Infinite scroll implementation
-const loadMore = () => {
-  updateNextUrl()
-}
-
-const handleScroll = () => {
-  const bottomOfWindow = window.innerHeight + window.scrollY >= document.documentElement.offsetHeight - 10
-  if (bottomOfWindow) {
-    loadMore()
-  }
-}
-
-onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
-})
-
+useInfiniteScroll(updateNextUrl)
 </script>
 
 <template>

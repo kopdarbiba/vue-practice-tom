@@ -1,8 +1,6 @@
 import { computed, ref, watch } from 'vue'
-import { useRoute } from 'vue-router'
 
 export function useNewUrlConstructor(route) {
-  // const route = useRoute()
   const newUrl = computed(() => constructNewUrl(route))
 
   function constructNewUrl(route) {
