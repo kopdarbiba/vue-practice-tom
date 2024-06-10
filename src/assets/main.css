@@ -8,19 +8,19 @@ body {
   margin: 0 auto;
   padding: 2rem;
   font-weight: normal;
-  background-color: rgb(255, 191, 123);
+  background-color: rgb(177, 138, 99);
 }
 a,
 .green {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
+  color: rgb(226, 190, 14);
   transition: 0.4s;
   padding: 3px;
 }
 
 @media (hover: hover) {
   a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+    background-color: hsla(55, 57%, 25%, 0.2);
   }
 }
 ul {

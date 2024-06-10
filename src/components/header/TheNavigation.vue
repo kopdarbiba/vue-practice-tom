@@ -1,15 +1,17 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
-
 const { t } = useI18n()
+
+import { useStorage } from '@vueuse/core'
+const storedQueryParams = useStorage('query-params', {}, sessionStorage)
 
 </script>
 
 
 <template>
     <div id="nav">
-        <!-- <RouterLink :to="{ name: 'home', params: { lang: $route.params.lang } }">{{ t('navBar.home') }}</RouterLink> -->
-        <RouterLink :to="{ name: 'search', params: { lang: $route.params.lang } }">{{ t('navBar.search') }}</RouterLink>
+        <RouterLink :to="{ name: 'search', params: { lang: $route.params.lang }, query: storedQueryParams }">
+            {{ t('navBar.search') }}</RouterLink>
         <RouterLink :to="{ name: 'about', params: { lang: $route.params.lang } }">{{ t('navBar.about') }}</RouterLink>
     </div>
 </template>

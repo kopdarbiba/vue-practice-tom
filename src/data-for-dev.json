@@ -1,0 +1,68 @@
+{
+  "meals": {
+    "title": { "lv": "Maltīte", "en": "Meals", "ru": "Еда" },
+    "data": [
+      {
+        "lv": "Brokastis",
+        "en": "Breakfast",
+        "ru": "Завтрак",
+        "slug": "breakfast",
+        "favorite": true
+      },
+      {
+        "lv": "Brančs",
+        "en": "Brunch",
+        "ru": "Бранч",
+        "slug": "brunch",
+        "favorite": true
+      },
+      {
+        "lv": "Pusdienas",
+        "en": "Lunch",
+        "ru": "Обед",
+        "slug": "lunch",
+        "favorite": true
+      },
+      {
+        "lv": "Vakariņas",
+        "en": "Dinner",
+        "ru": "Ужин",
+        "slug": "dinner",
+        "favorite": true
+      }
+    ]
+  },
+  "cuisines": {
+    "title": { "lv": "Virtuve", "en": "Cuisine", "ru": "Кухня" },
+    "data": [
+      {
+        "lv": "Itāļu",
+        "en": "Italian",
+        "ru": "Итальянская",
+        "slug": "italian",
+        "favorite": true
+      },
+      {
+        "slug": "mexican",
+        "lv": "Meksikāņu",
+        "en": "Mexican",
+        "ru": "Мексиканская",
+        "favorite": true
+      },
+      {
+        "slug": "chinese",
+        "lv": "Ķīniešu",
+        "en": "Chinese",
+        "ru": "Китайская",
+        "favorite": true
+      },
+      {
+        "slug": "indian",
+        "lv": "Indiešu",
+        "en": "Indian",
+        "ru": "Индийская",
+        "favorite": false
+      }
+    ]
+  }
+}

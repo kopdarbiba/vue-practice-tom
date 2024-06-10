@@ -1,9 +1,9 @@
 <script setup>
-import { ref, defineProps, defineEmits } from 'vue';
 import FormCheckBox from '@/components/search/FormCheckBoxItem.vue'
 
+const model = defineModel({ default: [] })
 
-const props = defineProps({
+defineProps({
     sectionData: {
         type: Array,
         required: true
@@ -19,29 +19,16 @@ const props = defineProps({
     locale: {
         type: String,
         required: true
-    },
-    dataFromStorage: {
-        type: Object,
-        required: true
     }
 });
-
-
-const selectedSectionValues = ref(props.dataFromStorage[props.sectionName] ? props.dataFromStorage[props.sectionName] : [])
-
-
-const emit = defineEmits(['collectSectionData'])
-const collectSectionData = () => {
-    emit('collectSectionData', props.sectionName, selectedSectionValues.value)
-
-}
 
 </script>
 
 <template>
-    <h2>{{ translatedSectionTitle }}</h2>
-    <FormCheckBox v-for="itemFromData in sectionData" v-model="selectedSectionValues" :itemFromData="itemFromData.slug"
-        :key="itemFromData.slug" :translatedLabel="itemFromData[locale]" @change="collectSectionData" />
+
+    <h3>{{ translatedSectionTitle }}</h3>
+    <FormCheckBox v-for="itemFromData in sectionData" v-model="model" :itemFromData="itemFromData.slug"
+        :key="itemFromData.slug" :translatedLabel="itemFromData[locale]" v-bind="$attrs" />
     <br>
 
 </template>

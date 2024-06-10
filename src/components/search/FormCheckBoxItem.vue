@@ -1,5 +1,5 @@
 <script setup>
-const selectedSectionValues = defineModel()
+const model = defineModel()
 
 defineProps({
     itemFromData: {
@@ -15,9 +15,8 @@ defineProps({
 </script>
 
 <template>
-
     <div>
-        <input type="checkbox" :id="itemFromData" :value="itemFromData" v-model="selectedSectionValues" />
+        <input type="checkbox" :id="itemFromData" :value="itemFromData" v-model="model" />
         <label :for="itemFromData">{{ translatedLabel }}</label>
     </div>
 </template>

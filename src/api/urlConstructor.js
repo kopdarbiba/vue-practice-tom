@@ -1,9 +1,26 @@
 import { computed, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
-export function useNewUrlConstructor() {
-  const route = useRoute()
+export function useNewUrlConstructor(route) {
+  // const route = useRoute()
   const newUrl = computed(() => constructNewUrl(route))
+
+  function constructNewUrl(route) {
+    const baseUrl = getBaseUrl(route.name)
+    const queryString = getQueryString(route.query)
+    const language = addLanguage(route.params.lang)
+    if (queryString || language) {
+      if (queryString && language) {
+        return baseUrl + '?' + queryString + '&' + language
+      } else if (queryString) {
+        return baseUrl + '?' + queryString
+      } else {
+        return baseUrl + '?' + language
+      }
+    } else {
+      return baseUrl
+    }
+  }
 
   function getBaseUrl(name) {
     const base = 'http://localhost:8000/api/recipes/'
@@ -26,23 +43,6 @@ export function useNewUrlConstructor() {
 
   function addLanguage(lang) {
     return lang ? `lang=${lang}` : ''
-  }
-
-  function constructNewUrl(route) {
-    const baseUrl = getBaseUrl(route.name)
-    const queryString = getQueryString(route.query)
-    const language = addLanguage(route.params.lang)
-    if (queryString || language) {
-      if (queryString && language) {
-        return baseUrl + '?' + queryString + '&' + language
-      } else if (queryString) {
-        return baseUrl + '?' + queryString
-      } else {
-        return baseUrl + '?' + language
-      }
-    } else {
-      return baseUrl
-    }
   }
 
   return { newUrl }

@@ -1,78 +1,66 @@
 <script setup>
-
 import sourceData from '@/data'
-import SetOrder from '@/components/search/FormSetOrder.vue'
 import FormSearchQuery from '@/components/search/FormSearchQuery.vue'
+import FormSetOrder from '@/components/search/FormSetOrder.vue'
 import FormPriceRange from '@/components/search/FormPriceRange.vue'
 import FormCheckBoxSection from '@/components/search/FormCheckBoxSection.vue'
-import { useQueryStringBuilder } from '@/composables/queryStringBuilder'
 
-import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 const { messages, locale } = useI18n()
 
-import { useSessionStorage } from '@vueuse/core'
-const formValuesStorage = useSessionStorage('form-data-values', {})
+import { ref, watch } from 'vue'
+import { useStorage } from '@vueuse/core'
+const storedQueryParams = useStorage('query-params', {}, sessionStorage)
 
+import { useRoute, useRouter } from 'vue-router'
+const route = useRoute()
+const router = useRouter()
+const _queryParams = ref({ ...storedQueryParams.value })
 
-const tempCollectedData = ref({})
-const submitForm = () => {
-    for (const k in tempCollectedData.value) {
-        const v = tempCollectedData.value[k]
-        if (v != '') {
-            formValuesStorage.value[k] = v
-        } else {
-            delete formValuesStorage.value[k]
+watch(storedQueryParams, (newValue) => {
+    _queryParams.value = { ...newValue }
+})
+
+const submit = () => {
+    removeParamsWithNoValue()
+    router.push({
+        name: route.name,
+        params: { lang: route.params.lang },
+        query: _queryParams.value
+    })
+}
+
+function removeParamsWithNoValue() {
+    for (const k in _queryParams.value) {
+        const v = _queryParams.value[k]
+        if (v == '') {
+            delete _queryParams.value[k]
         }
     }
-    tempCollectedData.value = {}
-    updateQueryString(formValuesStorage.value)
-
 }
-
-const queryStringStorage = useSessionStorage('query-string', [])
-function updateQueryString(params) {
-    queryStringStorage.value = useQueryStringBuilder(params)
-}
-
-function checkboxDataManager(k, v) {
-    tempCollectedData.value[k] = v
-    submitForm()
-}
-function priceRangeManager(k, v) {
-    tempCollectedData.value[k] = v
-}
-function searchFieldManager(k, v) {
-    tempCollectedData.value[k] = v
-}
-function orderSelectorManager(k, v) {
-    tempCollectedData.value[k] = v
-    submitForm()
-}
-
 </script>
 
 <template>
-    <ul @keyup.enter="submitForm()">
+    <ul @keyup.enter="submit">
         <li>
-            <FormSearchQuery :formValuesStorage="formValuesStorage" @collectSearchQuery="searchFieldManager"
+            <FormSearchQuery v-model="_queryParams.q"
                 :translatedSearchBox="messages[locale].searchPage.searchQuery.search_box" />
         </li>
+
         <li>
-            <SetOrder :formValuesStorage="formValuesStorage" @collectOrderingData="orderSelectorManager"
-                :translatedOptions="messages[locale].searchPage.orderSelector.options" />
-        </li>
-        <li>
-            <FormPriceRange :formValuesStorage="formValuesStorage" @collectPriceRange="priceRangeManager"
+            <FormPriceRange v-model:min-price="_queryParams.minPrice" v-model:max-price="_queryParams.maxPrice"
                 :translatedMinPrice="messages[locale].searchPage.priceFilter.minField"
                 :translatedMaxPrice="messages[locale].searchPage.priceFilter.maxField" />
         </li>
         <li>
-            <FormCheckBoxSection v-for="(section, key) in sourceData" :key="key" :sectionData="section.data"
-                :sectionName="key" :translatedSectionTitle="section.title[locale]" :locale="locale"
-                :dataFromStorage="formValuesStorage" @collectSectionData="checkboxDataManager" />
+            <FormSetOrder v-model="_queryParams.order" @change="submit"
+                :translatedOptions="messages[locale].searchPage.orderSelector.options" />
         </li>
-
+        <li>
+            <FormCheckBoxSection v-for="(section, key) in sourceData" :key="key" v-model="_queryParams[key]"
+                @change="submit" :sectionName="key" :sectionData="section.data"
+                :translatedSectionTitle="section.title[locale]" :locale="locale" />
+        </li>
     </ul>
 
 </template>
