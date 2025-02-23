@@ -27,9 +27,9 @@ useInfiniteScroll(updateNextUrl)
 <template>
   <div id="content">
     <div>
-      <h1>###</h1>
+      <h1></h1>
     </div>
-
+    
     <div>
       <div v-if="error">Oops! Error encountered: {{ error.message }}</div>
       <div v-else-if="data">
@@ -42,7 +42,7 @@ useInfiniteScroll(updateNextUrl)
             {{ recipe.url }}
             <div v-if="recipe.images && recipe.images.length > 0">
               <div v-for="(image, index) in recipe.images" :key="index">
-                <img :src="image.generate_presigned_url_for_image" alt="Recipe Image" />
+                <img :src="image.thumbnail_url" alt="Recipe Image" />
               </div>
             </div>
             <br>
